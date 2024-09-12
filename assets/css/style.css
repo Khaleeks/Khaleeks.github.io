@@ -27,7 +27,7 @@ body{
 	font-family: 'Poppins', sans-serif;
 	font-size:16px;
 	color: #676a81;
-	background: #fff;
+	background: #F5DFC6;
     max-width:1920px;
     margin:0 auto;
 	overflow-x:hidden;
@@ -675,7 +675,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
         11. Contact
 --------------------------------------*/
 .contact {
-    background: #EDD9A3;
+    background: #E8C04A;
     padding: 50px 0 100px;
 }
 .single-contact-box {padding-top: 100px;}
