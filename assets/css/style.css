@@ -326,9 +326,9 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4B00FF;}
 
 .single-profile-overlay {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    flex-direction: column; /* Stack the name and description vertically */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; 
     position: absolute;
     top: 0;
     left: 0;
