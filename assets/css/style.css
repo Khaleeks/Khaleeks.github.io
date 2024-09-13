@@ -313,6 +313,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4B00FF;}
         5. Cast
 --------------------------------------*/
 .single-profile {
+    padding:  50px 0 100px;
     position: relative;
     height: 80vh; /* Full height for each profile */
     display: flex;
