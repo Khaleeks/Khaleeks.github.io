@@ -507,32 +507,29 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 --------------------------------------*/
 .single-profile {
     position: relative;
-    height: 100vh; /* Adjust height as needed */
+    height: 100vh; /* Full height for each profile */
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
-    transition: background 0.5s linear;
+    color: #fff; /* Set text color to white */
 }
 
 .single-profile-overlay {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Stack the name and description vertically */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(75, 0, 255, 0.8); /* Semi-transparent gradient */
-    color: #fff;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     opacity: 0;
-    transition: opacity 0.5s;
-    z-index: 2; /* Ensure this is above the image */
-    padding: 20px; /* Optional: Add padding for better text visibility */
-    text-align: center; /* Center text */
+    transition: opacity 0.5s ease-in-out;
 }
 
 .single-profile:hover .single-profile-overlay {
@@ -540,14 +537,12 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 
 .profile-icon-name {
-    font-size: 24px; /* Adjust size as needed */
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 24px; /* Adjust as needed */
+    margin-bottom: 10px; /* Space between name and description */
 }
 
 .profile-description {
-    font-size: 16px; /* Adjust size as needed */
-    padding: 0 20px; /* Optional: Add padding for better text readability */
+    text-align: center; /* Center text */
 }
 
 /*-------------------------------------
