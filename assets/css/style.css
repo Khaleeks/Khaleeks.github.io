@@ -339,6 +339,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4B00FF;}
     background: linear-gradient(to right, rgba(75, 0, 255, 0.7), rgba(0, 0, 255, 0.7)); /* Blue gradient with opacity */
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    padding: 20px;
 }
 
 .single-profile:hover .single-profile-overlay {
