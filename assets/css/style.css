@@ -314,7 +314,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4B00FF;}
 --------------------------------------*/
 .single-profile {
     position: relative;
-    height: 100vh; /* Full height for each profile */
+    height: 80vh; /* Full height for each profile */
     display: flex;
     justify-content: center;
     align-items: center;
