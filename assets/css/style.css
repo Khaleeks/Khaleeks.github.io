@@ -314,6 +314,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4B00FF;}
 --------------------------------------*/
 .single-profile {
     margin-top: 0;
+    margin-bottom: 50px;
     padding:  20px;
     position: relative;
     height: 80vh; /* Full height for each profile */
@@ -349,7 +350,6 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4B00FF;}
 
 .profile-icon-name {
     font-size: 24px; /* Adjust as needed */
-    margin-bottom: 50px; /* Space between name and description */
 }
 
 .profile-description {
