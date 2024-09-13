@@ -519,21 +519,22 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 
 .single-profile-overlay {
     display: flex;
-    flex-direction: column; /* Stack the name and description vertically */
-    justify-content: center; /* Center the content vertically */
-    align-items: center; /* Center the content horizontally */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    background: linear-gradient(to right, rgba(75, 0, 255, 0.7), rgba(0, 0, 255, 0.7)); /* Blue gradient with opacity */
+    transform: scale(0);
+    transition: transform 0.5s linear;
 }
 
 .single-profile:hover .single-profile-overlay {
-    opacity: 1; /* Show overlay on hover */
+    transform: scale(1);
 }
 
 .profile-icon-name {
@@ -542,6 +543,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 
 .profile-description {
+    color: #fff;
     text-align: center; /* Center text */
 }
 
