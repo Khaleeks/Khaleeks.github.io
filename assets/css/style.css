@@ -365,6 +365,10 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4B00FF;}
     border:  1px solid #e5ebf2;
 }
 
+.gallery .section-heading h2 {
+    margin-bottom: 20px; /* Adjust the value to create the desired space */
+}
+
 .portfolio-content {padding-top: 100px;}
 
 /* ---- .item ---- */
