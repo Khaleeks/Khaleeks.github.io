@@ -49,6 +49,6 @@ The tone of the site mirrors the film’s light-hearted but supportive message. 
 3. **Areas for Improvement:**
    While I’m proud of what I accomplished, I recognize that there’s always room for improvement. If I had more time, I would love to include more behind-the-scenes content, like bloopers or additional cast insights, which would give the project even more personality. I would also like to incorporate more user-generated content, such as reviews or thoughts from people who’ve seen the film, which could create a stronger connection with my audience. 
 
-   #### **Conclusion 🥳:**
+#### **Conclusion 🥳:**
    In conclusion, the Campus Tales website is more than just a platform to host a short film—it’s an extension of the story I wanted to tell, one that celebrates the shared experience of entering college while embracing the unique journey of each individual. From concept to implementation, every decision was driven by the desire to create a meaningful and engaging experience for freshmen, making them feel welcomed and understood during this exciting but uncertain phase of their lives. Through a combination of thoughtful design, interactive elements, and a clear narrative focus, the website successfully extends the heart of the film into a digital space, offering users both a story and an invitation to feel like they belong. While there are areas I hope to refine and expand upon in the future, I'm proud of how the project turned out and the lessons I’ve learned throughout the process.
 
