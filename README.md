@@ -1,2 +1,54 @@
-# Khaleeks.github.io
-Comm Lab 30MFF Website
+
+## **✨The Campus Tales 30MFF Website✨**
+
+The *Campus Tales* 30-Minute Film Festival (30MFF) project was born out of a challenge for my Fall 2024 Communications Lab class, where we were tasked with creating a film in just 30 minutes or less. At first glance, this seemed like a simple task, but in reality, it was anything but. The challenge wasn’t just about making a film—it was about doing so under tight time constraints, which really pushed us to think on our feet, make quick creative decisions, and work as a team. The time pressure forced us to focus on the essentials while still delivering a meaningful, engaging story.
+
+#### **Concept and Theme 📑:**
+The core concept for this film was inspired by the viral "very demure, very mindful" trend, but we wanted to do more than just follow the trend—we aimed to personalize it for our audience, the incoming freshman class of 2028. As a junior, I felt a strong sense of responsibility to craft something that could resonate with the freshmen on a deeper level. My teammates were both freshmen themselves, and I wanted the project to not only feature them but make them feel seen and heard in this new chapter of their lives. The film was designed to be more than a light-hearted take on a trend; it was a message to the incoming students: "Hey, you’re not alone." The transition to college is tough, and this project was meant to make them feel connected and supported right from the start.
+
+The theme of the film centered on the freshman experience—the uncertainty, the excitement, and the shared journey of stepping into a new environment. Our aim was to create something that didn’t just speak to the experience of being a freshman but also tapped into the universal college experience. Whether you’re a freshman now or someone who’s been through it, the feelings of navigating new spaces and facing new challenges are relatable to everyone. We wanted the tone to be fun and approachable, but with a Gen Z twist—college is a significant achievement, but it’s also meant to be celebrated in a way that feels modern, warm, and welcoming.
+
+#### **Website Purpose and Design 👩🏾‍💻:**
+The *Campus Tales* website was created to complement the film by extending its message into a digital space. The website is designed to reflect the film’s central theme of transition, connection, and the sense of belonging. My goal was to craft a space that wouldn’t just host the film but would also serve as a welcoming guide for the freshmen, helping them feel understood and a part of something bigger from the moment they landed on the page.
+
+The tone of the site mirrors the film’s light-hearted but supportive message. It’s vibrant, engaging, and designed to immerse users in the story of *Campus Tales* while simultaneously making them feel like they are part of the NYUAD community. The website doesn’t just showcase the film—it tells a story in its own right, using interactive features, thoughtful design choices, and personalized content to build a space that’s both informative and inviting. In essence, it’s a digital reflection of the film, creating a cohesive narrative that ties the film and the website together into one unified experience.
+
+#### **Process 🎞️:**
+
+1. **Concept Development:**
+   The very first step in bringing *Campus Tales* to life was, of course, the filming. With only 30 minutes to shoot, we didn’t have time for long brainstorming sessions or intricate scripts. We had to be fast and decisive. That’s where the viral “very demure, very mindful” trend came in—it gave us a framework to work within while still leaving room for personal touches that would speak to our audience. Surprisingly, filming turned out to be the easiest part of the project. The true challenge came in translating the core message of the film into the design of the website, ensuring that the site didn’t just present the film but truly told the story of the freshman experience in a way that was engaging, authentic, and relatable.
+
+2. **Storytelling Focus:**
+   Once the film was complete, the next step was to figure out how to translate its message into a website that could stand on its own while complementing the film. This required a lot of thought about how the website would present the story of the freshman experience not just to the freshmen but also to anyone who had ever gone through the transition to college. The website had to be more than just a place to watch the film—it needed to tell its own story about growth, adjustment, and connection. For me, this was the most important part. I wanted the website to mean something to someone, even if it was just one person who visited the site and felt less alone after watching the film and exploring the content. That’s why the storytelling aspect was so crucial to the design process.
+
+3. **Design and Wireframing:**
+   After settling on the concept, I began by creating a wireframe for the website. Initially, the wireframe was a simple, single-page document with the video embedded at the top. My goal was to keep the design as clean and simple as possible while making the video the centerpiece. However, after some thought, I decided to create a separate HTML file just for the film. This gave the film the spotlight it deserved and allowed me to better structure the website to flow more naturally, guiding visitors through the story in a way that made sense.
+
+   The website itself is structured with several key sections: an "About" section that explains the film’s concept and the story behind it, a "Cast" section that introduces the team behind the film, and a "Hidden Demure Corners" section that showcases beautiful spots on campus that we didn’t capture in the film. This section ties back to the theme of discovery and adjustment—just as freshmen need time to find their way around a new campus, there are hidden gems that take time to discover. Lastly, the "Contact" section allows visitors to reach out with questions, comments, or reviews. I wanted each section of the website to feel purposeful, contributing to the overall narrative while also serving a practical function.
+
+4. **Implementation:**
+   For the development phase, I began by using a template to structure the site’s CSS, which I then heavily customized to reflect the aesthetic of the film. Clean, functional design was a priority, so I used HTML to structure the site, CSS to handle the styling, and JavaScript to add interactivity. The interactive features include a cast section where visitors can learn more about the actors and an interactive gallery that showcases additional content beyond what’s in the film.
+
+   One key decision was to go with bold colors—yellow and blue—to give the site a vibrant, yet calm feeling that matched the film’s tone of unity and togetherness. I wanted the website to feel warm and inviting, and I think the color scheme really helped achieve that. The typography was also an important consideration—I chose IBM Plex Monospace for its clean, modern look, which complemented the overall aesthetic. 
+
+   The biggest challenge during implementation was integrating the video. Initially, I had the film embedded full-screen on a separate HTML page, but after testing, it felt disconnected from the rest of the site. So, I revised this by embedding the video within a more structured layout, with the title and description below it, ensuring the film felt like an integral part of the overall experience.
+
+5. **Testing and Refinement:**
+   Throughout the process, I conducted user testing by sharing the site with friends and gathering feedback. This was crucial in refining the site and making small adjustments to improve the user experience. One significant piece of feedback was about the film page, which initially felt isolated from the rest of the site. By embedding the video more thoughtfully and adding descriptive elements, I was able to create a more cohesive experience. Final touches included checking for responsiveness across devices, ensuring buttons and links worked smoothly, and making sure the overall user experience was seamless.
+
+#### **Reflection and Evaluation 🤔:**
+
+1. **Initial Goals:**
+   Initially, I was under the impression that the assignment was just about creating a personal website to host the film. But as I worked on it, I realized the website was meant to introduce the film to the world in a way that resonated with the audience. My goals quickly shifted from focusing on myself to focusing on the characters in the film, the story we were telling, and the message we wanted to send to the freshmen. This project became much more than just an assignment; it became an opportunity to create something that could genuinely impact someone’s experience.
+
+2. **Achievement of Goals:**
+   I believe the final website successfully meets my goals. The design is fun, warm, and welcoming—exactly what I hoped for when I chose the bold yellow and blue color scheme. The film is presented as the centerpiece, but the additional content, like the "Hidden Demure Corners" section, helps expand on the story and create a more immersive experience. The decision to deviate from the typical school colors and branding was risky, but I think it paid off by making the website feel more personal and unique.
+
+   One of the biggest accomplishments was tackling the challenge of creating a separate HTML page for the film and linking it back to the homepage using buttons. This was an entirely new technical challenge for me, and I’m proud of how I managed to figure it out through trial and error until it matched the vision I had in my head.
+
+3. **Areas for Improvement:**
+   While I’m proud of what I accomplished, I recognize that there’s always room for improvement. If I had more time, I would love to include more behind-the-scenes content, like bloopers or additional cast insights, which would give the project even more personality. I would also like to incorporate more user-generated content, such as reviews or thoughts from people who’ve seen the film, which could create a stronger connection with my audience. 
+
+   #### **Conclusion 🥳:**
+   In conclusion, the Campus Tales website is more than just a platform to host a short film—it’s an extension of the story I wanted to tell, one that celebrates the shared experience of entering college while embracing the unique journey of each individual. From concept to implementation, every decision was driven by the desire to create a meaningful and engaging experience for freshmen, making them feel welcomed and understood during this exciting but uncertain phase of their lives. Through a combination of thoughtful design, interactive elements, and a clear narrative focus, the website successfully extends the heart of the film into a digital space, offering users both a story and an invitation to feel like they belong. While there are areas I hope to refine and expand upon in the future, I'm proud of how the project turned out and the lessons I’ve learned throughout the process.
+
