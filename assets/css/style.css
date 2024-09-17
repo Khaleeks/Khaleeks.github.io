@@ -327,6 +327,10 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4B00FF;}
     color: #fff; /* Set text color to white */
 }
 
+.cast .section-heading h2 {
+    margin-bottom: 20px; /* Adjust the value to create the desired space */
+}
+
 .single-profile-overlay {
     display: flex;
     flex-direction: column; /* Stack the name and description vertically */
