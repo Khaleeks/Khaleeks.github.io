@@ -4,7 +4,7 @@ const imageMap = {
     "portOfSpain": "images1/portOfspain.jpg",
     "scarborough": "images1/scarborough.jpg",
     "chaguanas": "images1/chaguanas.jpg",
-    "rioClaro": "imaages1/rioClaro.jpg",
+    "rioClaro": "images1/rioClaro.jpg",
     "sanFernando": "images1/sanFernando.jpg",
     "pointFortin": "images1/pointFortin.jpg"
 };
@@ -14,8 +14,6 @@ function createImage(id) {
     const img = document.createElement('img');
     img.src = imageMap[id]; // Set the image source
     img.alt = `${id} Image`; // Set alt text
-    img.style.position = 'absolute';
-    img.style.pointerEvents = 'none'; // Ensure the image doesn't interfere with mouse events
     img.style.display = 'none'; // Hide initially
     document.body.appendChild(img);
     return img;
