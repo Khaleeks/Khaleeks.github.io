@@ -9,27 +9,43 @@ const imageMap = {
     "pointFortin": "images1/pointFortin.jpg"
 };
 
-// Function to add images to the SVG elements
-function addImages() {
+// Function to create and position the image
+function createImage(id) {
+    const img = document.createElement('img');
+    img.src = imageMap[id]; // Set the image source
+    img.alt = `${id} Image`; // Set alt text
+    img.style.position = 'absolute';
+    img.style.pointerEvents = 'none'; // Ensure the image doesn't interfere with mouse events
+    img.style.display = 'none'; // Hide initially
+    document.body.appendChild(img);
+    return img;
+}
+
+// Object to store image elements
+const images = {};
+
+// Function to add hover functionality
+function addHoverEffects() {
     for (const id in imageMap) {
-        // Get the SVG element by ID
         const svgElement = document.getElementById(id);
         if (svgElement) {
-            // Create an img element
-            const img = document.createElement('img');
-            img.src = imageMap[id]; // Set the image source
-            img.alt = `${id} Image`; // Set alt text
+            images[id] = createImage(id); // Create image for this ID
 
-            // Set the position of the image (modify these values as needed)
-            img.style.position = 'absolute';
-            img.style.left = `${svgElement.getBBox().x + 10}px`; // x position
-            img.style.top = `${svgElement.getBBox().y - 30}px`; // y position
+            svgElement.addEventListener('mouseover', () => {
+                const img = images[id];
+                img.style.display = 'block'; // Show image on hover
+                const bbox = svgElement.getBBox();
+                img.style.left = `${bbox.x + 10}px`; // x position
+                img.style.top = `${bbox.y - 30}px`; // y position
+            });
 
-            // Append the image to the body (or to a specific container)
-            document.body.appendChild(img);
+            svgElement.addEventListener('mouseout', () => {
+                const img = images[id];
+                img.style.display = 'none'; // Hide image when not hovering
+            });
         }
     }
 }
 
-// Call the function to add images
-addImages();
+// Call the function to add hover effects
+addHoverEffects();
