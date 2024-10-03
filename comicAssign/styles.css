@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    position: relative; /* Optional, to ensure proper stacking of parallax layers */
+}
+
+#page1 {
+    background: url('https://via.placeholder.com/1200x800/ff7f7f/333333/') center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+#page2 {
+    background: url('https://via.placeholder.com/1200x800/7fff7f/333333/') center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+#page3 {
+    background: url('https://via.placeholder.com/1200x800/7f7fff/333333/') center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+#page4 {
+    background: url('https://via.placeholder.com/1200x800/ffff7f/333333/') center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+#page5 {
+    background: url('https://via.placeholder.com/1200x800/7f7f7f/ffffff/') center/cover no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Style for the images that will appear on click */
+.overlay-image {
+    width: 100px;
+    height: 100px;
+    background: url('https://via.placeholder.com/100x100/333333/ffffff') center/cover no-repeat;
+    position: absolute;
+    border-radius: 50%; /* This can stay if you want circular images */
+}
+
+#addImagesBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #333; /* Change this to your desired color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#addImagesBtn:hover {
+    background-color: #555; /* Change this to your desired hover color */
+}
+
+#page6 {
+    background: url('https://via.placeholder.com/1200x800/ff7fff/333333/') center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+#page7 {
+    background: url('https://via.placeholder.com/1200x800/7fffff/333333/') center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+#page8 {
+    background: url('https://via.placeholder.com/1200x800/ff7f3f/ffffff/') center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+#page9 {
+    background: url('https://via.placeholder.com/1200x800/7f7fff/ffffff/') center/cover no-repeat;
+    background-attachment: fixed;
+}
