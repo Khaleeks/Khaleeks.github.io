@@ -216,7 +216,6 @@ window.addEventListener('scroll', function() {
  const images = [
      'images/bubble1.png',
      'images/bubble2.png',
-     'images/bubble3.png',
      'images/bubble4.png'
  ]; 
 
@@ -246,8 +245,8 @@ window.addEventListener('scroll', function() {
          left: `${randomX}px`,
          top: `${randomY}px`,
          position: 'absolute',
-         width: '100px',
-         height: '100px'
+         width: '200px',
+         height: '200px'
      });
 
      page5.append(newImage);
