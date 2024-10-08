@@ -1,18 +1,6 @@
 $(document).ready(function () {
 
-    // $(window).on('scroll', function() {
-    //     $('.text-bubble').each(function() {
-    //         var elementTop = $(this).offset().top;
-    //         var windowBottom = $(window).scrollTop() + $(window).height();
-            
-    //         if (windowBottom > elementTop) {
-    //             $(this).addClass('active');
-    //         }
-    //     });
-    // });
-
-
-
+    //---------------------------------------------Text boxes for page 1--------------------------------------------
     document.addEventListener('scroll', function () {
         const bubble = document.getElementById('textBubble');
         const page1 = document.getElementById('page1');
@@ -25,48 +13,106 @@ $(document).ready(function () {
             bubble.style.display = 'none'; // Hide the bubble when not on page1
         }
     });
-    // ------------------------- Page 5 Overlay Logic -------------------------
-    const page5 = $("#page5");
-    const images = [
-        'images/image1.jpg',
-        'images/image2.jpg',
-        'images/image3.jpg',
-        'images/image4.jpg',
-        'images/image5.jpg'
-    ]; 
 
-    const innerCircleRadius = 350; // Radius of the empty circle in the middle
-
-    // Function to handle the button click and add images
-    $("#addImagesBtn").click(function () {
-        console.log("Button clicked!");
-
-        // Create a new image element
-        const newImage = $('<img>');
-        
-        // Select a random image from the array
-        const randomIndex = Math.floor(Math.random() * images.length);
-        newImage.attr("src", images[randomIndex]);
-        newImage.addClass("overlay-image");
-
-        let randomX, randomY;
-
-        // Generate positions until we find one outside the inner circle
-        do {
-            randomX = Math.random() * (page5.width() - 100);
-            randomY = Math.random() * (page5.height() - 100);
-        } while (Math.sqrt(Math.pow(randomX - (page5.width() / 2), 2) + Math.pow(randomY - (page5.height() / 2), 2)) < innerCircleRadius);
-
-        newImage.css({
-            left: `${randomX}px`,
-            top: `${randomY}px`,
-            position: 'absolute',
-            width: '100px',
-            height: '100px'
-        });
-
-        page5.append(newImage);
+    
+ //---------------------------------------------Text boxes for page 2--------------------------------------------
+    window.addEventListener('scroll', function() {
+        const page2 = document.getElementById('page2');
+        const bubblePage2 = document.querySelector('.bubble-page2');
+        const page2Offset = page2.offsetTop;
+        const page2Height = page2.offsetHeight;
+    
+        if (window.scrollY >= page2Offset && window.scrollY < page2Offset + page2Height) {
+            bubblePage2.style.display = 'block'; // Show the bubble when on page 2
+        } else {
+            bubblePage2.style.display = 'none'; // Hide it when not on page 2
+        }
     });
+
+ //---------------------------------------------Text boxes for page 3--------------------------------------------
+    window.addEventListener('scroll', function() {
+        const page3 = document.getElementById('page3');
+        const bubblePage3 = document.querySelector('.bubble-page3');
+        const page3Offset = page3.offsetTop;
+        const page3Height = page3.offsetHeight;
+    
+        if (window.scrollY >= page3Offset && window.scrollY < page3Offset + page3Height) {
+            bubblePage3.style.display = 'block'; // Show the bubble when on page 3
+        } else {
+            bubblePage3.style.display = 'none'; // Hide it when not on page 3
+        }
+    });
+
+ //---------------------------------------------Text boxes for page 4--------------------------------------------
+    window.addEventListener('scroll', function() {
+        const page4 = document.getElementById('page4');
+        const bubblePage4 = document.querySelector('.bubble-page4');
+        const page4Offset = page4.offsetTop;
+        const page4Height = page4.offsetHeight;
+    
+        if (window.scrollY >= page4Offset && window.scrollY < page4Offset + page4Height) {
+            bubblePage4.style.display = 'block'; // Show the bubble when on page 4
+        } else {
+            bubblePage4.style.display = 'none'; // Hide it when not on page 4
+        }
+    });
+
+    //---------------------------------------------Text boxes for page 5--------------------------------------------
+    window.addEventListener('scroll', function() {
+        const page5 = document.getElementById('page5');
+        const bubblePage5 = document.getElementById('bubblePage5');
+        const page5Offset = page5.offsetTop;
+        const page5Height = page5.offsetHeight;
+    
+        if (window.scrollY >= page5Offset && window.scrollY < page5Offset + page5Height) {
+            bubblePage5.style.display = 'block'; // Show the bubble when on page 5
+        } else {
+            bubblePage5.style.display = 'none'; // Hide it when not on page 5
+        }
+    });
+ //---------------------------------------------Text boxes for page 6--------------------------------------------
+window.addEventListener('scroll', function() {
+    const page6 = document.getElementById('page6');
+    const bubblePage6 = document.querySelector('.bubble-page6');
+    const page6Offset = page6.offsetTop;
+    const page6Height = page6.offsetHeight;
+
+    if (window.scrollY >= page6Offset && window.scrollY < page6Offset + page6Height) {
+        bubblePage6.style.display = 'block'; // Show the bubble when on page 6
+    } else {
+        bubblePage6.style.display = 'none'; // Hide it when not on page 6
+    }
+});
+
+
+ //---------------------------------------------Text boxes for page 7--------------------------------------------
+window.addEventListener('scroll', function() {
+    const page7 = document.getElementById('page7');
+    const bubblePage7 = document.querySelector('.bubble-page7');
+    const page7Offset = page7.offsetTop;
+    const page7Height = page7.offsetHeight;
+
+    if (window.scrollY >= page7Offset && window.scrollY < page7Offset + page7Height) {
+        bubblePage7.style.display = 'block'; // Show the bubble when on page 7
+    } else {
+        bubblePage7.style.display = 'none'; // Hide it when not on page 7
+    }
+});
+
+ //---------------------------------------------Text boxes for page 8--------------------------------------------
+window.addEventListener('scroll', function() {
+    const page8 = document.getElementById('page8');
+    const bubblePage8 = document.querySelector('.bubble-page8');
+    const page8Offset = page8.offsetTop;
+    const page8Height = page8.offsetHeight;
+
+    if (window.scrollY >= page8Offset && window.scrollY < page8Offset + page8Height) {
+        bubblePage8.style.display = 'block'; // Show the bubble when on page 8
+    } else {
+        bubblePage8.style.display = 'none'; // Hide it when not on page 8
+    }
+});
+   
 
     // ------------------------- Page 2 Overlay Logic -------------------------
     const overlayImages2 = [
@@ -163,6 +209,50 @@ $(document).ready(function () {
             changeOverlayImage4();
         }
     });
+
+
+ // ------------------------- Page 5 Overlay Logic -------------------------
+ const page5 = $("#page5");
+ const images = [
+     'images/image1.jpg',
+     'images/image2.jpg',
+     'images/image3.jpg',
+     'images/image4.jpg',
+     'images/image5.jpg'
+ ]; 
+
+ const innerCircleRadius = 350; // Radius of the empty circle in the middle
+
+ // Function to handle the button click and add images
+ $("#addImagesBtn").click(function () {
+     console.log("Button clicked!");
+
+     // Create a new image element
+     const newImage = $('<img>');
+     
+     // Select a random image from the array
+     const randomIndex = Math.floor(Math.random() * images.length);
+     newImage.attr("src", images[randomIndex]);
+     newImage.addClass("overlay-image");
+
+     let randomX, randomY;
+
+     // Generate positions until we find one outside the inner circle
+     do {
+         randomX = Math.random() * (page5.width() - 100);
+         randomY = Math.random() * (page5.height() - 100);
+     } while (Math.sqrt(Math.pow(randomX - (page5.width() / 2), 2) + Math.pow(randomY - (page5.height() / 2), 2)) < innerCircleRadius);
+
+     newImage.css({
+         left: `${randomX}px`,
+         top: `${randomY}px`,
+         position: 'absolute',
+         width: '100px',
+         height: '100px'
+     });
+
+     page5.append(newImage);
+ });
 
  // ------------------------- Page 6 Overlay Logic  -------------------------
  const overlayImages6 = ['images/6takeover.webp', 'images/image5.jpg'];
