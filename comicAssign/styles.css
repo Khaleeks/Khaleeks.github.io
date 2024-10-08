@@ -203,11 +203,15 @@ h1 {
 
 
 .bubble-image {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 150px; /* Adjust size as needed */
-    height: auto;
-    display: none; /* Hidden initially */
-    z-index: 10;
+    position: fixed;         /* Fixed position relative to the viewport */
+    top: -250px;                   /* Position at the very top */
+    left: -200px;                /* Position at the very left */
+    width: 800px;           /* Set a desired width (adjust as needed) */
+    height: 800px;          /* Set a desired height (adjust as needed) */
+    display: none;         /* Set to block for visibility */
+    z-index: 10;            /* Ensure it's above other elements */
+    padding: 0;             /* No padding */
+    margin: 0;              /* Ensure no margin is added */
+    box-sizing: border-box; /* Include padding and border in total width and height */
 }
+
