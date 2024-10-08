@@ -214,11 +214,10 @@ window.addEventListener('scroll', function() {
  // ------------------------- Page 5 Overlay Logic -------------------------
  const page5 = $("#page5");
  const images = [
-     'images/image1.jpg',
-     'images/image2.jpg',
-     'images/image3.jpg',
-     'images/image4.jpg',
-     'images/image5.jpg'
+     'images/bubble1.png',
+     'images/bubble2.png',
+     'images/bubble3.png',
+     'images/bubble4.png'
  ]; 
 
  const innerCircleRadius = 350; // Radius of the empty circle in the middle
