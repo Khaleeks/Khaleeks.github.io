@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+    $(window).on('scroll', function() {
+        $('.text-bubble').each(function() {
+            var elementTop = $(this).offset().top;
+            var windowBottom = $(window).scrollTop() + $(window).height();
+            
+            if (windowBottom > elementTop) {
+                $(this).addClass('active');
+            }
+        });
+    });
     // ------------------------- Page 5 Overlay Logic -------------------------
     const page5 = $("#page5");
     const images = [
