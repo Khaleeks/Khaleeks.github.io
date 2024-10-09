@@ -198,13 +198,8 @@ const overlayImages3 = [
 
 let currentImageIndex3 = 0;
 
-// Select the arrow prompt element for page 3
-const arrowPrompt3 = document.createElement('div');
-arrowPrompt3.className = 'right-arrow-prompt';
-arrowPrompt3.id = 'arrowPrompt3';
-arrowPrompt3.style.display = 'none'; // Initially hide the prompt
-arrowPrompt3.textContent = 'Click right arrow';
-document.getElementById('page3').appendChild(arrowPrompt3); // Append it to page 3
+// Select the arrow prompt element
+const arrowPromptPage3 = document.getElementById('arrowPromptPage3'); // Ensure this matches your HTML
 
 // Function to change the overlay image and manage bubble visibility for page 3
 function changeOverlayImage3() {
@@ -244,12 +239,13 @@ window.addEventListener('scroll', function() {
         bubblePage3Second.style.display = 'block'; // Show the second bubble
 
         // Show the right arrow prompt
-        arrowPrompt3.style.display = 'block'; // Show the right arrow prompt
+        arrowPromptPage3.style.display = 'block'; // Show the arrow prompt
+
     } else {
         // Hide both bubbles and the arrow prompt when not on page 3
         bubblePage3.style.display = 'none';
         bubblePage3Second.style.display = 'none';
-        arrowPrompt3.style.display = 'none'; // Hide the arrow prompt
+        arrowPromptPage3.style.display = 'none'; // Hide the arrow prompt
     }
 });
 
@@ -270,7 +266,7 @@ $('#page3').on('keydown', (event) => {
 });
 
    // ------------------------- Page 4 Overlay Logic -------------------------
-const overlayImages4 = [
+   const overlayImages4 = [
     'images/4angry.png',
     'images/4first.png',
     'images/4second.png'
@@ -278,9 +274,12 @@ const overlayImages4 = [
 
 let currentImageIndex4 = 0;
 
+// Select the arrow prompt element
+const arrowPromptPage4 = document.getElementById('arrowPromptPage4'); // Ensure this matches your HTML
+
 // Function to change the overlay image and manage bubble visibility for page 4
 function changeOverlayImage4() {
-    console.log("Changing overlay image to: ", overlayImages4[currentImageIndex4]);
+    console.log("Changing overlay image on page 4 to: ", overlayImages4[currentImageIndex4]);
     $('#page4').css('--overlay-image', `url(${overlayImages4[currentImageIndex4]})`);
 
     const bubblePage4 = document.querySelector('.bubble-page4');
@@ -314,10 +313,15 @@ window.addEventListener('scroll', function() {
         // Show the bubbles when scrolling on page 4
         bubblePage4.style.display = 'block'; // Show the first bubble
         bubblePage4Second.style.display = 'block'; // Show the second bubble
+
+        // Show the right arrow prompt
+        arrowPromptPage4.style.display = 'block'; // Show the arrow prompt
+
     } else {
-        // Hide both bubbles when not on page 4
+        // Hide both bubbles and the arrow prompt when not on page 4
         bubblePage4.style.display = 'none';
         bubblePage4Second.style.display = 'none';
+        arrowPromptPage4.style.display = 'none'; // Hide the arrow prompt
     }
 });
 
@@ -336,6 +340,7 @@ $('#page4').on('keydown', (event) => {
         changeOverlayImage4();
     }
 });
+
 
 
  // ------------------------- Page 5 Overlay Logic -------------------------
@@ -386,8 +391,12 @@ $('#page4').on('keydown', (event) => {
 ];
 let currentImageIndex6 = 0;
 
+// Select the arrow prompt element
+const arrowPromptPage6 = document.getElementById('arrowPromptPage6'); // Ensure this matches your HTML
+
 // Function to change overlay image and manage bubble visibility
 function changeOverlayImage6() {
+    console.log("Changing overlay image on page 6 to: ", overlayImages6[currentImageIndex6]);
     $('#page6').css('--overlay-image', `url(${overlayImages6[currentImageIndex6]})`);
 
     const bubblePage6 = document.querySelector('.bubble-page6');
@@ -408,20 +417,9 @@ function changeOverlayImage6() {
     }
 }
 
-// Initial setup
-changeOverlayImage6();
-
-// Keydown event for page 6 to handle image changes
-$('#page6').on('keydown', (event) => {
-    event.preventDefault(); // Prevent default action for the key press
-    if (event.key === 'ArrowRight') {
-        currentImageIndex6 = (currentImageIndex6 + 1) % overlayImages6.length;
-        changeOverlayImage6();
-    } else if (event.key === 'ArrowLeft') {
-        currentImageIndex6 = (currentImageIndex6 - 1 + overlayImages6.length) % overlayImages6.length;
-        changeOverlayImage6();
-    }
-});
+// Initial setup for page 6
+changeOverlayImage6(); // Change overlay image on load
+document.querySelector('.bubble-page6').style.display = 'none'; // Hide the bubble initially
 
 // Scroll event listener for page 6 to handle when to show/hide the bubble
 window.addEventListener('scroll', function() {
@@ -437,6 +435,36 @@ window.addEventListener('scroll', function() {
         }
     } else {
         bubblePage6.style.display = 'none'; // Hide the bubble when not on page 6
+    }
+});
+
+// Keydown event for page 6 to handle image changes
+$('#page6').on('keydown', (event) => {
+    event.preventDefault(); // Prevent default action for the key press
+    console.log("Key pressed on page 6: ", event.key);
+
+    if (event.key === 'ArrowRight') {
+        console.log("Right arrow pressed on page 6");
+        currentImageIndex6 = (currentImageIndex6 + 1) % overlayImages6.length;
+        changeOverlayImage6();
+    } else if (event.key === 'ArrowLeft') {
+        console.log("Left arrow pressed on page 6");
+        currentImageIndex6 = (currentImageIndex6 - 1 + overlayImages6.length) % overlayImages6.length;
+        changeOverlayImage6();
+    }
+});
+
+// Show the arrow prompt when on page 6
+window.addEventListener('scroll', function() {
+    const page6 = document.getElementById('page6');
+    const page6Offset = page6.offsetTop;
+    const page6Height = page6.offsetHeight;
+
+    // Show the arrow prompt only when on page 6
+    if (window.scrollY >= page6Offset && window.scrollY < page6Offset + page6Height) {
+        arrowPromptPage6.style.display = 'block'; // Show the arrow prompt
+    } else {
+        arrowPromptPage6.style.display = 'none'; // Hide the arrow prompt when not on page 6
     }
 });
 
