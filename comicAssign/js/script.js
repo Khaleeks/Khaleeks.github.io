@@ -403,6 +403,33 @@ window.addEventListener('scroll', function() {
     }
 });
 
+ // ------------------------- Page 7 Overlay Logic  -------------------------
+
+// Get the audio element
+const page7Audio = document.getElementById('page7Audio');
+
+// Set up the scroll listener for page 7
+window.addEventListener('scroll', function() {
+    const page7 = document.getElementById('page7');
+    const page7Offset = page7.offsetTop;
+    const page7Height = page7.offsetHeight;
+
+    // Check if the user is on page 7
+    if (window.scrollY >= page7Offset && window.scrollY < page7Offset + page7Height) {
+        // Check if the user has clicked to allow audio playback
+        if (page7Audio.paused) {
+            page7Audio.play().then(() => {
+                console.log("Audio is playing");
+            }).catch((error) => {
+                console.log("Audio autoplay blocked, waiting for user click");
+            });
+        }
+    } else {
+        // Stop the audio if the user scrolls away from page 7
+        page7Audio.pause();
+        page7Audio.currentTime = 0; // Reset the audio to the start
+    }
+});
 
  // ------------------------- Page 8 Overlay Logic  -------------------------
  const overlayImages8 = [
@@ -439,21 +466,37 @@ $('#page8').on('keydown', (event) => {
     }
 });
 
-// Scroll event listener for page 8
+// Function to play/pause audio based on scroll position on page 8
 window.addEventListener('scroll', function() {
     const page8 = document.getElementById('page8');
     const bubblePage8 = document.querySelector('.bubble-page8');
     const page8Offset = page8.offsetTop;
     const page8Height = page8.offsetHeight;
 
-    // Show the bubble when the user is on page 8
+    // Check if the user is on page 8
     if (window.scrollY >= page8Offset && window.scrollY < page8Offset + page8Height) {
         if (currentImageIndex8 === 0) {
             bubblePage8.style.display = 'block'; // Show the bubble only on the first image
+
+            // Play the audio if it's not playing
+            if (page8Audio.paused) {
+                page8Audio.play().then(() => {
+                    console.log("Page 8 audio is playing");
+                }).catch((error) => {
+                    console.log("Autoplay blocked, waiting for user click");
+                });
+            }
         }
     } else {
         bubblePage8.style.display = 'none'; // Hide the bubble when not on page 8
+
+        // Pause the audio and reset it when leaving page 8
+        page8Audio.pause();
+        page8Audio.currentTime = 0; // Reset the audio to the start
     }
 });
+
+
+
 
 });
