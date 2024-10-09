@@ -14,48 +14,33 @@ $(document).ready(function () {
         }
     });
 
-    
- //---------------------------------------------Text boxes for page 2--------------------------------------------
-    window.addEventListener('scroll', function() {
-        const page2 = document.getElementById('page2');
-        const bubblePage2 = document.querySelector('.bubble-page2');
-        const page2Offset = page2.offsetTop;
-        const page2Height = page2.offsetHeight;
-    
-        if (window.scrollY >= page2Offset && window.scrollY < page2Offset + page2Height) {
-            bubblePage2.style.display = 'block'; // Show the bubble when on page 2
-        } else {
-            bubblePage2.style.display = 'none'; // Hide it when not on page 2
-        }
-    });
-
  //---------------------------------------------Text boxes for page 3--------------------------------------------
-    window.addEventListener('scroll', function() {
-        const page3 = document.getElementById('page3');
-        const bubblePage3 = document.querySelector('.bubble-page3');
-        const page3Offset = page3.offsetTop;
-        const page3Height = page3.offsetHeight;
+    // window.addEventListener('scroll', function() {
+    //     const page3 = document.getElementById('page3');
+    //     const bubblePage3 = document.querySelector('.bubble-page3');
+    //     const page3Offset = page3.offsetTop;
+    //     const page3Height = page3.offsetHeight;
     
-        if (window.scrollY >= page3Offset && window.scrollY < page3Offset + page3Height) {
-            bubblePage3.style.display = 'block'; // Show the bubble when on page 3
-        } else {
-            bubblePage3.style.display = 'none'; // Hide it when not on page 3
-        }
-    });
+    //     if (window.scrollY >= page3Offset && window.scrollY < page3Offset + page3Height) {
+    //         bubblePage3.style.display = 'block'; // Show the bubble when on page 3
+    //     } else {
+    //         bubblePage3.style.display = 'none'; // Hide it when not on page 3
+    //     }
+    // });
 
  //---------------------------------------------Text boxes for page 4--------------------------------------------
-    window.addEventListener('scroll', function() {
-        const page4 = document.getElementById('page4');
-        const bubblePage4 = document.querySelector('.bubble-page4');
-        const page4Offset = page4.offsetTop;
-        const page4Height = page4.offsetHeight;
+    // window.addEventListener('scroll', function() {
+    //     const page4 = document.getElementById('page4');
+    //     const bubblePage4 = document.querySelector('.bubble-page4');
+    //     const page4Offset = page4.offsetTop;
+    //     const page4Height = page4.offsetHeight;
     
-        if (window.scrollY >= page4Offset && window.scrollY < page4Offset + page4Height) {
-            bubblePage4.style.display = 'block'; // Show the bubble when on page 4
-        } else {
-            bubblePage4.style.display = 'none'; // Hide it when not on page 4
-        }
-    });
+    //     if (window.scrollY >= page4Offset && window.scrollY < page4Offset + page4Height) {
+    //         bubblePage4.style.display = 'block'; // Show the bubble when on page 4
+    //     } else {
+    //         bubblePage4.style.display = 'none'; // Hide it when not on page 4
+    //     }
+    // });
 
     //---------------------------------------------Text boxes for page 5--------------------------------------------
     window.addEventListener('scroll', function() {
@@ -71,18 +56,18 @@ $(document).ready(function () {
         }
     });
  //---------------------------------------------Text boxes for page 6--------------------------------------------
-window.addEventListener('scroll', function() {
-    const page6 = document.getElementById('page6');
-    const bubblePage6 = document.querySelector('.bubble-page6');
-    const page6Offset = page6.offsetTop;
-    const page6Height = page6.offsetHeight;
+// window.addEventListener('scroll', function() {
+//     const page6 = document.getElementById('page6');
+//     const bubblePage6 = document.querySelector('.bubble-page6');
+//     const page6Offset = page6.offsetTop;
+//     const page6Height = page6.offsetHeight;
 
-    if (window.scrollY >= page6Offset && window.scrollY < page6Offset + page6Height) {
-        bubblePage6.style.display = 'block'; // Show the bubble when on page 6
-    } else {
-        bubblePage6.style.display = 'none'; // Hide it when not on page 6
-    }
-});
+//     if (window.scrollY >= page6Offset && window.scrollY < page6Offset + page6Height) {
+//         bubblePage6.style.display = 'block'; // Show the bubble when on page 6
+//     } else {
+//         bubblePage6.style.display = 'none'; // Hide it when not on page 6
+//     }
+// });
 
 
  //---------------------------------------------Text boxes for page 7--------------------------------------------
@@ -100,115 +85,229 @@ window.addEventListener('scroll', function() {
 });
 
  //---------------------------------------------Text boxes for page 8--------------------------------------------
-window.addEventListener('scroll', function() {
-    const page8 = document.getElementById('page8');
-    const bubblePage8 = document.querySelector('.bubble-page8');
-    const page8Offset = page8.offsetTop;
-    const page8Height = page8.offsetHeight;
+// window.addEventListener('scroll', function() {
+//     const page8 = document.getElementById('page8');
+//     const bubblePage8 = document.querySelector('.bubble-page8');
+//     const page8Offset = page8.offsetTop;
+//     const page8Height = page8.offsetHeight;
 
-    if (window.scrollY >= page8Offset && window.scrollY < page8Offset + page8Height) {
-        bubblePage8.style.display = 'block'; // Show the bubble when on page 8
-    } else {
-        bubblePage8.style.display = 'none'; // Hide it when not on page 8
-    }
-});
+//     if (window.scrollY >= page8Offset && window.scrollY < page8Offset + page8Height) {
+//         bubblePage8.style.display = 'block'; // Show the bubble when on page 8
+//     } else {
+//         bubblePage8.style.display = 'none'; // Hide it when not on page 8
+//     }
+// });
    
 
-    // ------------------------- Page 2 Overlay Logic -------------------------
-    const overlayImages2 = [
-        'images/2friendsw.webp',
-        'images/image3.jpg',
-        'images/image1.jpg'
-    ];
+  // ------------------------- Page 2 Overlay Logic -------------------------
+const overlayImages2 = [
+    'images/2friendsw.webp',
+    'images/image3.jpg',
+    'images/image1.jpg'
+];
 
-    let currentImageIndex2 = 0;
+let currentImageIndex2 = 0;
 
-    function changeOverlayImage2() {
-        console.log("Changing overlay image to: ", overlayImages2[currentImageIndex2]);
-        $('#page2').css('--overlay-image', `url(${overlayImages2[currentImageIndex2]})`);
+// Function to change the overlay image and manage bubble visibility for page 2
+function changeOverlayImage2() {
+    console.log("Changing overlay image to: ", overlayImages2[currentImageIndex2]);
+    $('#page2').css('--overlay-image', `url(${overlayImages2[currentImageIndex2]})`);
+
+    const bubblePage2 = document.querySelector('.bubble-page2');
+    const bubblePage2Second = document.querySelector('.bubble-page2-second');
+
+    // Show or hide text bubbles based on the current overlay image
+    if (currentImageIndex2 === 0) {
+        bubblePage2.style.display = 'block'; // Show the first bubble
+        bubblePage2Second.style.display = 'block'; // Show the second bubble
+    } else {
+        bubblePage2.style.display = 'none'; // Hide the first bubble
+        bubblePage2Second.style.display = 'none'; // Hide the second bubble
     }
+}
 
-    changeOverlayImage2();
+// Initial setup for page 2
+changeOverlayImage2(); // Change overlay image on load
+document.querySelector('.bubble-page2').style.display = 'none'; // Hide the first bubble initially
+document.querySelector('.bubble-page2-second').style.display = 'none'; // Hide the second bubble initially
 
-    // Keydown event for page 2
-    $('#page2').on('keydown', (event) => {
-        event.preventDefault(); // Prevent default action for the key press
-        console.log("Key pressed on page 2: ", event.key);
+// Scroll event listener for page 2
+window.addEventListener('scroll', function() {
+    const page2 = document.getElementById('page2');
+    const page2Offset = page2.offsetTop;
+    const page2Height = page2.offsetHeight;
+    const bubblePage2 = document.querySelector('.bubble-page2');
+    const bubblePage2Second = document.querySelector('.bubble-page2-second');
 
-        if (event.key === 'ArrowRight') {
-            console.log("Right arrow pressed on page 2");
-            currentImageIndex2 = (currentImageIndex2 + 1) % overlayImages2.length;
-            changeOverlayImage2();
-        } else if (event.key === 'ArrowLeft') {
-            console.log("Left arrow pressed on page 2");
-            currentImageIndex2 = (currentImageIndex2 - 1 + overlayImages2.length) % overlayImages2.length;
-            changeOverlayImage2();
+    // Check if the user is on page 2
+    if (window.scrollY >= page2Offset && window.scrollY < page2Offset + page2Height) {
+        // Show the bubbles when scrolling on page 2
+        bubblePage2.style.display = 'block'; // Show the first bubble
+        bubblePage2Second.style.display = 'block'; // Show the second bubble
+
+        // Show the second bubble at the bottom of page 2
+        if (window.scrollY >= page2Offset + page2Height - window.innerHeight) {
+            bubblePage2Second.style.display = 'block'; // Show the second bubble at the bottom
+        } else {
+            bubblePage2Second.style.display = 'none'; // Hide it when not at the bottom
         }
-    });
-
-    // ------------------------- Page 3 Overlay Logic -------------------------
-    const overlayImages3 = [
-        'images/3asking.webp',
-        'images/image2.jpg',
-        'images/image5.jpg'
-    ];
-
-    let currentImageIndex3 = 0;
-
-    function changeOverlayImage3() {
-        console.log("Changing overlay image on page 3 to: ", overlayImages3[currentImageIndex3]);
-        $('#page3').css('--overlay-image', `url(${overlayImages3[currentImageIndex3]})`);
+    } else {
+        // Hide both bubbles when not on page 2
+        bubblePage2.style.display = 'none';
+        bubblePage2Second.style.display = 'none';
     }
+});
 
-    changeOverlayImage3();
+// Keydown event for page 2
+$('#page2').on('keydown', (event) => {
+    event.preventDefault(); // Prevent default action for the key press
+    console.log("Key pressed on page 2: ", event.key);
 
-    // Keydown event for page 3
-    $('#page3').on('keydown', (event) => {
-        event.preventDefault(); // Prevent default action for the key press
-        console.log("Key pressed on page 3: ", event.key);
-
-        if (event.key === 'ArrowRight') {
-            console.log("Right arrow pressed on page 3");
-            currentImageIndex3 = (currentImageIndex3 + 1) % overlayImages3.length;
-            changeOverlayImage3();
-        } else if (event.key === 'ArrowLeft') {
-            console.log("Left arrow pressed on page 3");
-            currentImageIndex3 = (currentImageIndex3 - 1 + overlayImages3.length) % overlayImages3.length;
-            changeOverlayImage3();
-        }
-    });
-
-    // ------------------------- Page 4 Overlay Logic -------------------------
-    const overlayImages4 = [
-        'images/4angry.webp',
-        'images/image2.jpg',
-        'images/image5.jpg'
-    ];
-
-    let currentImageIndex4 = 0;
-
-    function changeOverlayImage4() {
-        console.log("Changing overlay image on page 4 to: ", overlayImages4[currentImageIndex4]);
-        $('#page4').css('--overlay-image', `url(${overlayImages4[currentImageIndex4]})`);
+    if (event.key === 'ArrowRight') {
+        console.log("Right arrow pressed on page 2");
+        currentImageIndex2 = (currentImageIndex2 + 1) % overlayImages2.length;
+        changeOverlayImage2();
+    } else if (event.key === 'ArrowLeft') {
+        console.log("Left arrow pressed on page 2");
+        currentImageIndex2 = (currentImageIndex2 - 1 + overlayImages2.length) % overlayImages2.length;
+        changeOverlayImage2();
     }
+});
 
-    changeOverlayImage4();
+// ------------------------- Page 3 Overlay Logic -------------------------
+const overlayImages3 = [
+    'images/3asking.webp',
+    'images/image2.jpg',
+    'images/image5.jpg'
+];
 
-    // Keydown event for page 4
-    $('#page4').on('keydown', (event) => {
-        event.preventDefault(); // Prevent default action for the key press
-        console.log("Key pressed on page 4: ", event.key);
+let currentImageIndex3 = 0;
 
-        if (event.key === 'ArrowRight') {
-            console.log("Right arrow pressed on page 4");
-            currentImageIndex4 = (currentImageIndex4 + 1) % overlayImages4.length;
-            changeOverlayImage4();
-        } else if (event.key === 'ArrowLeft') {
-            console.log("Left arrow pressed on page 4");
-            currentImageIndex4 = (currentImageIndex4 - 1 + overlayImages4.length) % overlayImages4.length;
-            changeOverlayImage4();
-        }
-    });
+// Function to change the overlay image and manage bubble visibility for page 3
+function changeOverlayImage3() {
+    console.log("Changing overlay image on page 3 to: ", overlayImages3[currentImageIndex3]);
+    $('#page3').css('--overlay-image', `url(${overlayImages3[currentImageIndex3]})`);
+
+    const bubblePage3 = document.querySelector('.bubble-page3');
+    const bubblePage3Second = document.querySelector('.bubble-page3-second');
+
+    // Show or hide text bubbles based on the current overlay image
+    if (currentImageIndex3 === 0) {
+        bubblePage3.style.display = 'block'; // Show the first bubble
+        bubblePage3Second.style.display = 'block'; // Show the second bubble
+    } else {
+        bubblePage3.style.display = 'none'; // Hide the first bubble
+        bubblePage3Second.style.display = 'none'; // Hide the second bubble
+    }
+}
+
+// Initial setup for page 3
+changeOverlayImage3(); // Change overlay image on load
+document.querySelector('.bubble-page3').style.display = 'none'; // Hide the first bubble initially
+document.querySelector('.bubble-page3-second').style.display = 'none'; // Hide the second bubble initially
+
+// Scroll event listener for page 3
+window.addEventListener('scroll', function() {
+    const page3 = document.getElementById('page3');
+    const page3Offset = page3.offsetTop;
+    const page3Height = page3.offsetHeight;
+    const bubblePage3 = document.querySelector('.bubble-page3');
+    const bubblePage3Second = document.querySelector('.bubble-page3-second');
+
+    // Check if the user is on page 3
+    if (window.scrollY >= page3Offset && window.scrollY < page3Offset + page3Height) {
+        // Show the bubbles when scrolling on page 3
+        bubblePage3.style.display = 'block'; // Show the first bubble
+        bubblePage3Second.style.display = 'block'; // Show the second bubble
+    } else {
+        // Hide both bubbles when not on page 3
+        bubblePage3.style.display = 'none';
+        bubblePage3Second.style.display = 'none';
+    }
+});
+
+// Keydown event for page 3
+$('#page3').on('keydown', (event) => {
+    event.preventDefault(); // Prevent default action for the key press
+    console.log("Key pressed on page 3: ", event.key);
+
+    if (event.key === 'ArrowRight') {
+        console.log("Right arrow pressed on page 3");
+        currentImageIndex3 = (currentImageIndex3 + 1) % overlayImages3.length;
+        changeOverlayImage3();
+    } else if (event.key === 'ArrowLeft') {
+        console.log("Left arrow pressed on page 3");
+        currentImageIndex3 = (currentImageIndex3 - 1 + overlayImages3.length) % overlayImages3.length;
+        changeOverlayImage3();
+    }
+});
+   // ------------------------- Page 4 Overlay Logic -------------------------
+const overlayImages4 = [
+    'images/4angry.webp',
+    'images/image4.jpg',
+    'images/image6.jpg'
+];
+
+let currentImageIndex4 = 0;
+
+// Function to change the overlay image and manage bubble visibility for page 4
+function changeOverlayImage4() {
+    console.log("Changing overlay image to: ", overlayImages4[currentImageIndex4]);
+    $('#page4').css('--overlay-image', `url(${overlayImages4[currentImageIndex4]})`);
+
+    const bubblePage4 = document.querySelector('.bubble-page4');
+    const bubblePage4Second = document.querySelector('.bubble-page4-second');
+
+    // Show or hide text bubbles based on the current overlay image
+    if (currentImageIndex4 === 0) {
+        bubblePage4.style.display = 'block'; // Show the first bubble
+        bubblePage4Second.style.display = 'block'; // Show the second bubble
+    } else {
+        bubblePage4.style.display = 'none'; // Hide the first bubble
+        bubblePage4Second.style.display = 'none'; // Hide the second bubble
+    }
+}
+
+// Initial setup for page 4
+changeOverlayImage4(); // Change overlay image on load
+document.querySelector('.bubble-page4').style.display = 'none'; // Hide the first bubble initially
+document.querySelector('.bubble-page4-second').style.display = 'none'; // Hide the second bubble initially
+
+// Scroll event listener for page 4
+window.addEventListener('scroll', function() {
+    const page4 = document.getElementById('page4');
+    const page4Offset = page4.offsetTop;
+    const page4Height = page4.offsetHeight;
+    const bubblePage4 = document.querySelector('.bubble-page4');
+    const bubblePage4Second = document.querySelector('.bubble-page4-second');
+
+    // Check if the user is on page 4
+    if (window.scrollY >= page4Offset && window.scrollY < page4Offset + page4Height) {
+        // Show the bubbles when scrolling on page 4
+        bubblePage4.style.display = 'block'; // Show the first bubble
+        bubblePage4Second.style.display = 'block'; // Show the second bubble
+    } else {
+        // Hide both bubbles when not on page 4
+        bubblePage4.style.display = 'none';
+        bubblePage4Second.style.display = 'none';
+    }
+});
+
+// Keydown event for page 4
+$('#page4').on('keydown', (event) => {
+    event.preventDefault(); // Prevent default action for the key press
+    console.log("Key pressed on page 4: ", event.key);
+
+    if (event.key === 'ArrowRight') {
+        console.log("Right arrow pressed on page 4");
+        currentImageIndex4 = (currentImageIndex4 + 1) % overlayImages4.length;
+        changeOverlayImage4();
+    } else if (event.key === 'ArrowLeft') {
+        console.log("Left arrow pressed on page 4");
+        currentImageIndex4 = (currentImageIndex4 - 1 + overlayImages4.length) % overlayImages4.length;
+        changeOverlayImage4();
+    }
+});
 
 
  // ------------------------- Page 5 Overlay Logic -------------------------
@@ -253,55 +352,108 @@ window.addEventListener('scroll', function() {
  });
 
  // ------------------------- Page 6 Overlay Logic  -------------------------
- const overlayImages6 = ['images/6takeover.webp', 'images/image5.jpg'];
- let currentImageIndex6 = 0;
+ const overlayImages6 = [
+    'images/6takeover.webp', 
+    'images/image5.jpg'
+];
+let currentImageIndex6 = 0;
 
- function changeOverlayImage6() {
-     $('#page6').css('--overlay-image', `url(${overlayImages6[currentImageIndex6]})`);
- }
+function changeOverlayImage6() {
+    $('#page6').css('--overlay-image', `url(${overlayImages6[currentImageIndex6]})`);
 
- changeOverlayImage6();
+    const bubblePage6 = document.querySelector('.bubble-page6');
 
- $('#page6').on('keydown', (event) => {
-     event.preventDefault();
-     if (event.key === 'ArrowRight') {
-         currentImageIndex6 = (currentImageIndex6 + 1) % overlayImages6.length;
-         changeOverlayImage6();
-     } else if (event.key === 'ArrowLeft') {
-         currentImageIndex6 = (currentImageIndex6 - 1 + overlayImages6.length) % overlayImages6.length;
-         changeOverlayImage6();
-     }
- });
+    // Show or hide the bubble based on the current overlay image
+    if (currentImageIndex6 === 0) {
+        bubblePage6.style.display = 'block'; // Show the bubble on the first image
+    } else {
+        bubblePage6.style.display = 'none'; // Hide the bubble on other images
+    }
+}
+
+// Initial setup
+changeOverlayImage6();
+
+// Keydown event for page 6
+$('#page6').on('keydown', (event) => {
+    event.preventDefault(); // Prevent default action for the key press
+    if (event.key === 'ArrowRight') {
+        currentImageIndex6 = (currentImageIndex6 + 1) % overlayImages6.length;
+        changeOverlayImage6();
+    } else if (event.key === 'ArrowLeft') {
+        currentImageIndex6 = (currentImageIndex6 - 1 + overlayImages6.length) % overlayImages6.length;
+        changeOverlayImage6();
+    }
+});
+
+// Scroll event listener for page 6
+window.addEventListener('scroll', function() {
+    const page6 = document.getElementById('page6');
+    const bubblePage6 = document.querySelector('.bubble-page6');
+    const page6Offset = page6.offsetTop;
+    const page6Height = page6.offsetHeight;
+
+    // Show the bubble when the user is on page 6
+    if (window.scrollY >= page6Offset && window.scrollY < page6Offset + page6Height) {
+        if (currentImageIndex6 === 0) {
+            bubblePage6.style.display = 'block'; // Show the bubble only on the first image
+        }
+    } else {
+        bubblePage6.style.display = 'none'; // Hide the bubble when not on page 6
+    }
+});
+
 
  // ------------------------- Page 8 Overlay Logic  -------------------------
- const overlayImages8 = ['images/8ending.webp', 'images/image5.jpg'];
- let currentImageIndex8 = 0;
+ const overlayImages8 = [
+    'images/8ending.webp', 
+    'images/image5.jpg'
+];
+let currentImageIndex8 = 0;
 
- function changeOverlayImage8() {
-     $('#page8').css('--overlay-image', `url(${overlayImages8[currentImageIndex8]})`);
- }
+function changeOverlayImage8() {
+    $('#page8').css('--overlay-image', `url(${overlayImages8[currentImageIndex8]})`);
 
- changeOverlayImage8();
+    const bubblePage8 = document.querySelector('.bubble-page8');
 
- $('#page8').on('keydown', (event) => {
-     event.preventDefault();
-     if (event.key === 'ArrowRight') {
-         currentImageIndex8 = (currentImageIndex8 + 1) % overlayImages8.length;
-         changeOverlayImage8();
-     } else if (event.key === 'ArrowLeft') {
-         currentImageIndex8 = (currentImageIndex8 - 1 + overlayImages8.length) % overlayImages8.length;
-         changeOverlayImage8();
-     }
- });
-    // Set focus to the active page
-    function setFocusToPage(pageId) {
-        $(pageId).focus();
+    // Show or hide the bubble based on the current overlay image
+    if (currentImageIndex8 === 0) {
+        bubblePage8.style.display = 'block'; // Show the bubble on the first image
+    } else {
+        bubblePage8.style.display = 'none'; // Hide the bubble on other images
     }
+}
 
-    // Example of switching between pages (make sure to call this function when changing pages)
-    function switchPage(toPageId) {
-        $(".page").hide(); // Assuming you have a class `page` for all pages
-        $(toPageId).show();
-        setFocusToPage(toPageId);
+// Initial setup
+changeOverlayImage8();
+
+// Keydown event for page 8
+$('#page8').on('keydown', (event) => {
+    event.preventDefault(); // Prevent default action for the key press
+    if (event.key === 'ArrowRight') {
+        currentImageIndex8 = (currentImageIndex8 + 1) % overlayImages8.length;
+        changeOverlayImage8();
+    } else if (event.key === 'ArrowLeft') {
+        currentImageIndex8 = (currentImageIndex8 - 1 + overlayImages8.length) % overlayImages8.length;
+        changeOverlayImage8();
     }
+});
+
+// Scroll event listener for page 8
+window.addEventListener('scroll', function() {
+    const page8 = document.getElementById('page8');
+    const bubblePage8 = document.querySelector('.bubble-page8');
+    const page8Offset = page8.offsetTop;
+    const page8Height = page8.offsetHeight;
+
+    // Show the bubble when the user is on page 8
+    if (window.scrollY >= page8Offset && window.scrollY < page8Offset + page8Height) {
+        if (currentImageIndex8 === 0) {
+            bubblePage8.style.display = 'block'; // Show the bubble only on the first image
+        }
+    } else {
+        bubblePage8.style.display = 'none'; // Hide the bubble when not on page 8
+    }
+});
+
 });

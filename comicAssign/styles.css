@@ -229,6 +229,19 @@ h1 {
     box-sizing: border-box;  /* Include padding and border in total width and height */
 }
 
+.bubble-page2-second {
+    position: fixed;         /* Fixed position relative to the viewport */
+    bottom: -250px;          /* Adjust to the desired vertical position (at the bottom) */
+    left: -20px;             /* Position it on the left */
+    width: 400px;            /* Set a desired width */
+    height: auto;            /* Maintain the aspect ratio */
+    display: none;           /* Initially hidden */
+    z-index: 10;             /* Ensure it's above the first bubble */
+    padding: 0;              /* No padding */
+    margin: 0;               /* Ensure no margin is added */
+    box-sizing: border-box;  /* Include padding and border in total width and height */
+}
+
 .bubble-page3 {
     position: fixed;         /* Fixed position relative to the viewport */
     top: -120px;             /* Adjust to the desired vertical position */
@@ -242,6 +255,20 @@ h1 {
     box-sizing: border-box;  /* Include padding and border in total width and height */
 }
 
+.bubble-page3-second {
+    position: fixed;
+    bottom: -250px;           /* Adjust as needed */
+    right: -50px;            /* Adjust the position */
+    width: 400px;            /* Set the width */
+    height: auto;            /* Auto height to maintain aspect ratio */
+    display: none;           /* Initially hidden */
+    z-index: 10;             /* Ensure it's above other elements */
+    padding: 0;              /* No padding */
+    margin: 0;               /* No margin */
+    box-sizing: border-box;  /* Ensure padding and border are included in size */
+}
+
+
 .bubble-page4 {
     position: fixed;         /* Fixed position relative to the viewport */
     top: -120px;             /* Adjust to the desired vertical position */
@@ -254,6 +281,21 @@ h1 {
     margin: 0;              /* Ensure no margin is added */
     box-sizing: border-box;  /* Include padding and border in total width and height */
 }
+
+.bubble-page4-second {
+    position: fixed;         /* Fixed position relative to the viewport */
+    bottom: -250px;          /* Adjust to place it near the bottom of the page */
+    left: 50px;              /* Position it on the left side */
+    width: 400px;            /* Set the width */
+    height: auto;            /* Maintain aspect ratio */
+    display: none;           /* Initially hidden */
+    z-index: 10;             /* Above other elements */
+    padding: 0;              /* No padding */
+    margin: 0;               /* No margin */
+    box-sizing: border-box;  /* Include padding and border in the element’s size */
+}
+
+
 
 .bubble-page5 {
     position: absolute;       /* Use absolute positioning within the section */
