@@ -21,6 +21,8 @@ In her role as the technical lead, Khaleeqa worked with JavaScript, HTML, and CS
 
 #### **Sihyun Kim👩🏻‍🎨 and Yerkebulan Imanbayev👨🏻‍🎨:** 
 This duo was responsible for crafting the comic's visuals. They began by generating initial images using AI tools like ChatGPT, which served as a foundation for their artwork. Yerkebulan focused on refining these images with Adobe Photoshop and Illustrator, ensuring that characters blended seamlessly into their environments. He skillfully adjusted colors and outlines for a polished look. Meanwhile, Sihyun designed the dialogue bubbles in Canva, choosing styles that matched the comic's tone. Their collaboration in visual development brought the story to life, making it visually engaging for readers.
+
+
 ![WhatsApp Image 2024-10-09 at 18 48 49](https://github.com/user-attachments/assets/24646739-4739-45a6-9f5e-a1184c5d3bfd)
 
 ![WhatsApp Image 2024-10-09 at 18 48 50](https://github.com/user-attachments/assets/387f652b-be01-4605-a599-2178edb6f17d)
