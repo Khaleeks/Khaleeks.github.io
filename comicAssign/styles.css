@@ -31,7 +31,7 @@ body, html {
     left: 50%; /* Centers the image horizontally */
     transform: translateX(-50%); /* Adjusts position to center the image */
     width: 1024px; /* Fixed width for the overlay image */
-    height: 750px; /* Fixed height for the overlay image */
+    height: 800px; /* Fixed height for the overlay image */
     opacity: 1;
     z-index: 0; /* Ensures the overlay is behind other content */
     pointer-events: none; /* Allows interaction with content below the overlay */
