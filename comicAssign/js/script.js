@@ -101,9 +101,8 @@ window.addEventListener('scroll', function() {
 
   // ------------------------- Page 2 Overlay Logic -------------------------
 const overlayImages2 = [
-    'images/2friendsw.webp',
-    'images/image3.jpg',
-    'images/image1.jpg'
+    'images/2fff.jpg',
+    'images/2first.png'
 ];
 
 let currentImageIndex2 = 0;
@@ -177,8 +176,8 @@ $('#page2').on('keydown', (event) => {
 // ------------------------- Page 3 Overlay Logic -------------------------
 const overlayImages3 = [
     'images/3asking.webp',
-    'images/image2.jpg',
-    'images/image5.jpg'
+    'images/3first.png',
+    'images/3second.png'
 ];
 
 let currentImageIndex3 = 0;
@@ -243,9 +242,9 @@ $('#page3').on('keydown', (event) => {
 });
    // ------------------------- Page 4 Overlay Logic -------------------------
 const overlayImages4 = [
-    'images/4angry.webp',
-    'images/image4.jpg',
-    'images/image6.jpg'
+    'images/4angry.png',
+    'images/4first.png',
+    'images/4second.png'
 ];
 
 let currentImageIndex4 = 0;
@@ -354,27 +353,36 @@ $('#page4').on('keydown', (event) => {
  // ------------------------- Page 6 Overlay Logic  -------------------------
  const overlayImages6 = [
     'images/6takeover.webp', 
-    'images/image5.jpg'
+    'images/6second.png'
 ];
 let currentImageIndex6 = 0;
 
+// Function to change overlay image and manage bubble visibility
 function changeOverlayImage6() {
     $('#page6').css('--overlay-image', `url(${overlayImages6[currentImageIndex6]})`);
 
     const bubblePage6 = document.querySelector('.bubble-page6');
 
-    // Show or hide the bubble based on the current overlay image
+    // Hide the bubble initially (on refresh)
+    bubblePage6.style.display = 'none';
+
+    // Only show the bubble if the first overlay image is active
     if (currentImageIndex6 === 0) {
-        bubblePage6.style.display = 'block'; // Show the bubble on the first image
-    } else {
-        bubblePage6.style.display = 'none'; // Hide the bubble on other images
+        // Check if the user is already on page 6 when the image changes
+        const page6 = document.getElementById('page6');
+        const page6Offset = page6.offsetTop;
+        const page6Height = page6.offsetHeight;
+
+        if (window.scrollY >= page6Offset && window.scrollY < page6Offset + page6Height) {
+            bubblePage6.style.display = 'block'; // Show the bubble only if on the first image and on page 6
+        }
     }
 }
 
 // Initial setup
 changeOverlayImage6();
 
-// Keydown event for page 6
+// Keydown event for page 6 to handle image changes
 $('#page6').on('keydown', (event) => {
     event.preventDefault(); // Prevent default action for the key press
     if (event.key === 'ArrowRight') {
@@ -386,22 +394,23 @@ $('#page6').on('keydown', (event) => {
     }
 });
 
-// Scroll event listener for page 6
+// Scroll event listener for page 6 to handle when to show/hide the bubble
 window.addEventListener('scroll', function() {
     const page6 = document.getElementById('page6');
     const bubblePage6 = document.querySelector('.bubble-page6');
     const page6Offset = page6.offsetTop;
     const page6Height = page6.offsetHeight;
 
-    // Show the bubble when the user is on page 6
+    // Check if the user is on page 6
     if (window.scrollY >= page6Offset && window.scrollY < page6Offset + page6Height) {
         if (currentImageIndex6 === 0) {
-            bubblePage6.style.display = 'block'; // Show the bubble only on the first image
+            bubblePage6.style.display = 'block'; // Show the bubble only if on the first image
         }
     } else {
         bubblePage6.style.display = 'none'; // Hide the bubble when not on page 6
     }
 });
+
 
  // ------------------------- Page 7 Overlay Logic  -------------------------
 
@@ -434,7 +443,7 @@ window.addEventListener('scroll', function() {
  // ------------------------- Page 8 Overlay Logic  -------------------------
  const overlayImages8 = [
     'images/8ending.webp', 
-    'images/image5.jpg'
+    'images/8second.png'
 ];
 let currentImageIndex8 = 0;
 
