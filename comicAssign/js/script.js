@@ -2,15 +2,23 @@ $(document).ready(function () {
 
     //---------------------------------------------Text boxes for page 1--------------------------------------------
     document.addEventListener('scroll', function () {
-        const bubble = document.getElementById('textBubble');
+        const bubble = document.getElementById('textBubble'); // This should be the bubble for Page 1
+        const page0 = document.getElementById('page0');
         const page1 = document.getElementById('page1');
-        
+    
         // Check if user is scrolling within page1
+        const page0Rect = page0.getBoundingClientRect();
         const page1Rect = page1.getBoundingClientRect();
-        if (page1Rect.top < window.innerHeight && page1Rect.bottom > 0) {
-            bubble.style.display = 'block'; // Show the bubble
+    
+        // Hide the bubble if the user is on Page 0
+        if (page0Rect.bottom > 0) {
+            bubble.style.display = 'none'; // Hide the bubble when on Page 0
+        } 
+        // Show the bubble if the user is on Page 1
+        else if (page1Rect.top < window.innerHeight && page1Rect.bottom > 0) {
+            bubble.style.display = 'block'; // Show the bubble only on Page 1
         } else {
-            bubble.style.display = 'none'; // Hide the bubble when not on page1
+            bubble.style.display = 'none'; // Hide the bubble when not on Page 1
         }
     });
 
@@ -447,23 +455,32 @@ window.addEventListener('scroll', function() {
 ];
 let currentImageIndex8 = 0;
 
+// Function to change overlay image and manage bubble visibility
 function changeOverlayImage8() {
     $('#page8').css('--overlay-image', `url(${overlayImages8[currentImageIndex8]})`);
 
     const bubblePage8 = document.querySelector('.bubble-page8');
 
+    // Always hide the bubble initially (on refresh or change)
+    bubblePage8.style.display = 'none';
+
     // Show or hide the bubble based on the current overlay image
     if (currentImageIndex8 === 0) {
-        bubblePage8.style.display = 'block'; // Show the bubble on the first image
-    } else {
-        bubblePage8.style.display = 'none'; // Hide the bubble on other images
+        const page8 = document.getElementById('page8');
+        const page8Offset = page8.offsetTop;
+        const page8Height = page8.offsetHeight;
+
+        // Check if the user is already on page 8 when the image changes
+        if (window.scrollY >= page8Offset && window.scrollY < page8Offset + page8Height) {
+            bubblePage8.style.display = 'block'; // Show the bubble only if on the first image and on page 8
+        }
     }
 }
 
 // Initial setup
 changeOverlayImage8();
 
-// Keydown event for page 8
+// Keydown event for page 8 to handle image changes
 $('#page8').on('keydown', (event) => {
     event.preventDefault(); // Prevent default action for the key press
     if (event.key === 'ArrowRight') {
@@ -475,7 +492,7 @@ $('#page8').on('keydown', (event) => {
     }
 });
 
-// Function to play/pause audio based on scroll position on page 8
+// Scroll event listener for page 8 to handle when to show/hide the bubble and play audio
 window.addEventListener('scroll', function() {
     const page8 = document.getElementById('page8');
     const bubblePage8 = document.querySelector('.bubble-page8');
@@ -488,6 +505,7 @@ window.addEventListener('scroll', function() {
             bubblePage8.style.display = 'block'; // Show the bubble only on the first image
 
             // Play the audio if it's not playing
+            const page8Audio = document.getElementById('page8Audio'); // HTML audio element
             if (page8Audio.paused) {
                 page8Audio.play().then(() => {
                     console.log("Page 8 audio is playing");
@@ -500,6 +518,7 @@ window.addEventListener('scroll', function() {
         bubblePage8.style.display = 'none'; // Hide the bubble when not on page 8
 
         // Pause the audio and reset it when leaving page 8
+        const page8Audio = document.getElementById('page8Audio'); // HTML audio element
         page8Audio.pause();
         page8Audio.currentTime = 0; // Reset the audio to the start
     }

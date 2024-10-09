@@ -35,6 +35,13 @@ body, html {
     opacity: 1;
     z-index: 0; /* Ensures the overlay is behind other content */
     pointer-events: none; /* Allows interaction with content below the overlay */
+
+    
+}
+
+/* Specific overlay images for each page */
+#page0::before {
+    background: url('images/3asking.webp') center/cover no-repeat;
 }
 /* Specific overlay images for each page */
 #page1::before {
@@ -145,7 +152,7 @@ body, html {
 }
 
 /* Background images for individual pages */
-#page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8, #page9 {
+#page0, #page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8, #page9 {
     background: url('images/campus.jpg') center/cover no-repeat;
     background-attachment: fixed;
     z-index: -1; /* Ensure background stays beneath the overlay */
