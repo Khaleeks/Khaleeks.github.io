@@ -41,7 +41,7 @@ body, html {
 
 /* Specific overlay images for each page */
 #page0::before {
-    background: url('images/3asking.webp') center/cover no-repeat;
+    background: url('images//chat.jpg') center/cover no-repeat;
 }
 /* Specific overlay images for each page */
 #page1::before {
@@ -55,7 +55,7 @@ body, html {
     left: 50%; /* Centers horizontally */
     transform: translate(-50%, -50%); /* Adjust to perfectly center the image */
     width: 1024px; /* Set a fixed width */
-    height: 750px; /* Set a fixed height */
+    height: 800px; /* Set a fixed height */
     background: var(--overlay-image, url('images/2friendsw.webp')) center/cover no-repeat;
     z-index: 0;
     pointer-events: none;
@@ -72,7 +72,7 @@ body, html {
     left: 50%; /* Centers horizontally */
     transform: translate(-50%, -50%); /* Ensures the image is centered */
     width: 1024px; /* Fixed width to prevent it from stretching across the page */
-    height: 750px; /* Fixed height to maintain aspect ratio */
+    height: 800px; /* Fixed height to maintain aspect ratio */
     background: var(--overlay-image, url('images/3asking.webp')) center/cover no-repeat;
     z-index: 0; /* Keeps it behind other content */
     pointer-events: none; /* Allows interaction with content below */
@@ -88,7 +88,7 @@ body, html {
     left: 50%; /* Horizontally center the image */
     transform: translate(-50%, -50%); /* Perfectly centers the image */
     width: 1024px; /* Fixed width to prevent stretching */
-    height: 750px; /* Fixed height to maintain aspect ratio */
+    height: 800px; /* Fixed height to maintain aspect ratio */
     background: var(--overlay-image, url('images/4angry.webp')) center/cover no-repeat;
     z-index: 0;
     pointer-events: none;
@@ -107,7 +107,7 @@ body, html {
     left: 50%; /* Centers the image horizontally */
     transform: translate(-50%, -50%); /* Ensures the image is fully centered */
     width: 1024px; /* Fixed width to prevent excessive stretching */
-    height: 750px; /* Fixed height to maintain aspect ratio */
+    height: 800px; /* Fixed height to maintain aspect ratio */
     background: var(--overlay-image, url('images/6takeover.webp')) center/cover no-repeat;
     z-index: 0; /* Keeps it behind other content */
     pointer-events: none; /* Allows interaction with content below the overlay */
@@ -127,7 +127,7 @@ body, html {
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Perfectly center the image */
     width: 1024px; /* Fixed width */
-    height: 750px; /* Fixed height */
+    height: 800px; /* Fixed height */
     background: var(--overlay-image, url('images/8ending.webp')) center/cover no-repeat;
     z-index: 0; /* Ensure it's behind other content */
     pointer-events: none; /* Allow interaction with content below */
@@ -143,7 +143,7 @@ body, html {
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Perfectly center the image */
     width: 1024px; /* Fixed width */
-    height: 750px; /* Fixed height */
+    height: 800px; /* Fixed height */
     background: url('images/9end.png') center/cover no-repeat;
     z-index: 0; /* Ensure it's behind other content */
     pointer-events: none; /* Allow interaction with content below */
@@ -153,7 +153,7 @@ body, html {
 
 /* Background images for individual pages */
 #page0, #page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8, #page9 {
-    background: url('images/campus.jpg') center/cover no-repeat;
+    background: url('images/bckg2.png') center/cover no-repeat;
     background-attachment: fixed;
     z-index: -1; /* Ensure background stays beneath the overlay */
 }
