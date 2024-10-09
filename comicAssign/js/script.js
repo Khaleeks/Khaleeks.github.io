@@ -451,7 +451,7 @@ window.addEventListener('scroll', function() {
  // ------------------------- Page 8 Overlay Logic  -------------------------
  const overlayImages8 = [
     'images/8ending.webp', 
-    'images/8second.png'
+    'images/8.second.png'
 ];
 let currentImageIndex8 = 0;
 
