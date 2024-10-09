@@ -423,7 +423,7 @@ h1 {
     box-sizing: border-box;  /* Include padding and border in total width and height */
 }
 
-#arrowPromptPage8 {
+.arrow-prompt {
     position: fixed;
     bottom: 20px;
     right: 20px;

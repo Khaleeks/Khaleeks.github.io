@@ -509,9 +509,11 @@ function changeOverlayImage8() {
     $('#page8').css('--overlay-image', `url(${overlayImages8[currentImageIndex8]})`);
 
     const bubblePage8 = document.querySelector('.bubble-page8');
+    const arrowPrompt8 = document.getElementById('arrowPrompt8');
 
-    // Always hide the bubble initially (on refresh or change)
+    // Always hide the bubble and prompt initially (on refresh or change)
     bubblePage8.style.display = 'none';
+    arrowPrompt8.style.display = 'none';
 
     // Show or hide the bubble based on the current overlay image
     if (currentImageIndex8 === 0) {
@@ -522,6 +524,7 @@ function changeOverlayImage8() {
         // Check if the user is already on page 8 when the image changes
         if (window.scrollY >= page8Offset && window.scrollY < page8Offset + page8Height) {
             bubblePage8.style.display = 'block'; // Show the bubble only if on the first image and on page 8
+            arrowPrompt8.style.display = 'block'; // Show the arrow prompt
         }
     }
 }
@@ -545,6 +548,7 @@ $('#page8').on('keydown', (event) => {
 window.addEventListener('scroll', function() {
     const page8 = document.getElementById('page8');
     const bubblePage8 = document.querySelector('.bubble-page8');
+    const arrowPrompt8 = document.getElementById('arrowPrompt8');
     const page8Offset = page8.offsetTop;
     const page8Height = page8.offsetHeight;
 
@@ -552,6 +556,7 @@ window.addEventListener('scroll', function() {
     if (window.scrollY >= page8Offset && window.scrollY < page8Offset + page8Height) {
         if (currentImageIndex8 === 0) {
             bubblePage8.style.display = 'block'; // Show the bubble only on the first image
+            arrowPrompt8.style.display = 'block'; // Show the arrow prompt
 
             // Play the audio if it's not playing
             const page8Audio = document.getElementById('page8Audio'); // HTML audio element
@@ -565,6 +570,7 @@ window.addEventListener('scroll', function() {
         }
     } else {
         bubblePage8.style.display = 'none'; // Hide the bubble when not on page 8
+        arrowPrompt8.style.display = 'none'; // Hide the arrow prompt
 
         // Pause the audio and reset it when leaving page 8
         const page8Audio = document.getElementById('page8Audio'); // HTML audio element
