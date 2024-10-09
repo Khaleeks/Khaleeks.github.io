@@ -108,12 +108,15 @@ window.addEventListener('scroll', function() {
    
 
   // ------------------------- Page 2 Overlay Logic -------------------------
-const overlayImages2 = [
+  const overlayImages2 = [
     'images/2fff.jpg',
     'images/2first.png'
 ];
 
 let currentImageIndex2 = 0;
+
+// Select the arrow prompt element
+const arrowPrompt = document.getElementById('arrowPrompt');
 
 // Function to change the overlay image and manage bubble visibility for page 2
 function changeOverlayImage2() {
@@ -152,6 +155,9 @@ window.addEventListener('scroll', function() {
         bubblePage2.style.display = 'block'; // Show the first bubble
         bubblePage2Second.style.display = 'block'; // Show the second bubble
 
+        // Show the right arrow prompt
+        arrowPrompt.style.display = 'block';
+
         // Show the second bubble at the bottom of page 2
         if (window.scrollY >= page2Offset + page2Height - window.innerHeight) {
             bubblePage2Second.style.display = 'block'; // Show the second bubble at the bottom
@@ -159,9 +165,10 @@ window.addEventListener('scroll', function() {
             bubblePage2Second.style.display = 'none'; // Hide it when not at the bottom
         }
     } else {
-        // Hide both bubbles when not on page 2
+        // Hide both bubbles and the arrow prompt when not on page 2
         bubblePage2.style.display = 'none';
         bubblePage2Second.style.display = 'none';
+        arrowPrompt.style.display = 'none'; // Hide the arrow prompt
     }
 });
 
@@ -181,6 +188,7 @@ $('#page2').on('keydown', (event) => {
     }
 });
 
+
 // ------------------------- Page 3 Overlay Logic -------------------------
 const overlayImages3 = [
     'images/3asking.webp',
@@ -189,6 +197,14 @@ const overlayImages3 = [
 ];
 
 let currentImageIndex3 = 0;
+
+// Select the arrow prompt element for page 3
+const arrowPrompt3 = document.createElement('div');
+arrowPrompt3.className = 'right-arrow-prompt';
+arrowPrompt3.id = 'arrowPrompt3';
+arrowPrompt3.style.display = 'none'; // Initially hide the prompt
+arrowPrompt3.textContent = 'Click right arrow';
+document.getElementById('page3').appendChild(arrowPrompt3); // Append it to page 3
 
 // Function to change the overlay image and manage bubble visibility for page 3
 function changeOverlayImage3() {
@@ -226,10 +242,14 @@ window.addEventListener('scroll', function() {
         // Show the bubbles when scrolling on page 3
         bubblePage3.style.display = 'block'; // Show the first bubble
         bubblePage3Second.style.display = 'block'; // Show the second bubble
+
+        // Show the right arrow prompt
+        arrowPrompt3.style.display = 'block'; // Show the right arrow prompt
     } else {
-        // Hide both bubbles when not on page 3
+        // Hide both bubbles and the arrow prompt when not on page 3
         bubblePage3.style.display = 'none';
         bubblePage3Second.style.display = 'none';
+        arrowPrompt3.style.display = 'none'; // Hide the arrow prompt
     }
 });
 
@@ -248,6 +268,7 @@ $('#page3').on('keydown', (event) => {
         changeOverlayImage3();
     }
 });
+
    // ------------------------- Page 4 Overlay Logic -------------------------
 const overlayImages4 = [
     'images/4angry.png',

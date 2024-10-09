@@ -249,6 +249,29 @@ h1 {
     box-sizing: border-box;  /* Include padding and border in total width and height */
 }
 
+/* Text box for page 2 */
+.right-arrow-prompt {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Reenie Beanie', sans-serif;
+    border-radius: 8px;
+    z-index: 100;
+    text-align: center;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    display: none; /* Hidden by default */
+}
+
+/* Ensure page 2 has a height for scrolling */
+#page2 {
+    min-height: 100vh; /* Adjust if necessary */
+}
+
+
 .bubble-page3 {
     position: fixed;         /* Fixed position relative to the viewport */
     top: -120px;             /* Adjust to the desired vertical position */
