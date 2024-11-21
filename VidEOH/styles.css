@@ -10,12 +10,50 @@ body {
 /* Start Screen */
 #start-screen {
     padding: 50px;
+    position: relative;
+    height: 100vh; /* Full viewport height */
 }
 
+/* Console Animation */
+.console-container {
+    font-family: "Barrio", sans-serif;
+    font-size: 5em; /* Adjusted font size for visibility */
+    text-align: center;
+    color: black;
+    position: absolute;
+    top: 50%; /* Center the text vertically */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    z-index: 2; /* Ensure text appears above other content */
+}
+
+/* Blinking Cursor */
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: -0.14em;
+    left: 10px;
+    font-size: 2em; /* Adjust underscore size */
+    animation: blink 0.75s step-end infinite; /* Make the cursor blink */
+}
+
+/* Blinking animation */
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+/* Start Screen Heading */
 #start-screen h1 {
     font-size: 2.5em;
     color: #333;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1; /* Ensure it is above the animation */
 }
 
 /* Play Button as Image */
@@ -27,6 +65,8 @@ body {
     bottom: 150px; /* Distance from the bottom */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
+    z-index: 1; /* Ensure it appears above other content */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
 }
 
 #play-button:hover {
@@ -42,8 +82,10 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 850px;
+    transition: opacity 0.5s ease; /* Smooth transition when showing the video container */
 }
 
+/* Choice Buttons and Final Button (Initially hidden) */
 .choice-buttons, #final-button {
     display: none;
     margin-top: 20px;
@@ -58,7 +100,7 @@ button {
     color: #fff;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
 }
 
 button:hover {
@@ -92,7 +134,7 @@ button:hover {
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
     cursor: pointer; /* Make it look clickable */
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
 }
 
 /* Optional: Add a hover effect for the image */

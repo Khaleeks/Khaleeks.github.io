@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     const finalButton = document.getElementById("final-button");
     const replayButton = document.getElementById("replay-button");
+    const consoleTextElement = document.getElementById("console-text");
+    const consoleUnderscore = document.getElementById("console-underscore");
 
     // YouTube Video URLs
     const videos = {
@@ -22,6 +24,63 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     let watchedStories = new Set();
+
+    // Add consoleText function here
+    function consoleText(words, id, colors) {
+        if (colors === undefined) colors = ['#fff']; // Default color if none is provided
+
+        let visible = true;
+        let con = document.getElementById('console'); // Console container for the underscore
+        let letterCount = 1;
+        let x = 1;
+        let waiting = false;
+        let target = document.getElementById(id); // Target where the text will be typed
+        target.setAttribute('style', 'color:' + colors[0]); // Set initial color of text
+
+        window.setInterval(function() {
+            if (letterCount === 0 && !waiting) {
+                waiting = true;
+                target.innerHTML = words[0].substring(0, letterCount); // Clear text
+                window.setTimeout(function() {
+                    // Cycle to next word and color
+                    let usedColor = colors.shift();
+                    colors.push(usedColor); // Recycle color to the back of the array
+                    let usedWord = words.shift();
+                    words.push(usedWord); // Recycle word to the back of the array
+
+                    x = 1; // Reset the letter count direction (to typing)
+                    target.setAttribute('style', 'color:' + colors[0]); // Change text color
+                    letterCount += x; // Start typing the next word
+                    waiting = false;
+                }, 1000); // Delay before typing next word
+            } else if (letterCount === words[0].length + 1 && !waiting) {
+                waiting = true;
+                window.setTimeout(function() {
+                    x = -1; // Reverse typing direction (backspacing)
+                    letterCount += x;
+                    waiting = false;
+                }, 1000); // Delay before backspacing
+            } else if (!waiting) {
+                target.innerHTML = words[0].substring(0, letterCount);
+                letterCount += x; // Increment or decrement letterCount based on direction
+            }
+        }, 120); // Speed of typing (120ms per letter)
+
+        // Blinking underscore effect
+        window.setInterval(function() {
+            if (visible) {
+                con.className = 'console-underscore hidden'; // Hide the underscore
+                visible = false;
+            } else {
+                con.className = 'console-underscore'; // Show the underscore
+                visible = true;
+            }
+        }, 400); // Blink every 400ms
+    }
+
+    // Usage example: Start typing animation with three strings and color cycling
+    consoleText(['The Principals Secret.', 'Choose Your Own Adventure', 'Khaleeqa, Yerk, Ghaya, Tosshi.'], 'text', ['tomato', 'rebeccapurple', 'lightblue']);
+    // You can call this function as needed elsewhere in the script
 
     // Step 1: Play the intro video
     playButton.addEventListener("click", () => {
@@ -76,5 +135,12 @@ document.addEventListener("DOMContentLoaded", () => {
         startScreen.style.display = "block";
         videoContainer.style.display = "none";
         iframeElement.src = ""; // Clear the video source
+
+        // Reset console animation for replay
+        consoleTextElement.textContent = "";
+        consoleUnderscore.style.visibility = "hidden";
+        setTimeout(() => {
+            typeText("Choose Your Own Adventure", consoleTextElement);
+        }, 500); // Restart animation
     });
 });

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Reenie+Beanie&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose Your Adventure</title>
@@ -9,13 +13,17 @@
 <body>
     <!-- Start Screen -->
     <div id="start-screen">
-        <h1>Choose Your Own Adventure</h1>
-    <!-- Play Button as Image -->
-    <img id="play-button" src="images/PLAY.png" alt="Play Button">
+        <!-- Console Text Animation -->
+        <div class="console-container">
+            <span id="text"></span> <!-- This is where the text will appear -->
+            <div class="console-underscore" id="console">&#95;</div> <!-- Blinking underscore -->
+        </div>
+        <!-- Play Button as Image -->
+        <img id="play-button" src="images/PLAY.png" alt="Play Button">
     </div>
 
     <!-- Video Player -->
-    <div id="video-container">
+    <div id="video-container" style="display: none;"> <!-- Initially hidden -->
         <iframe 
             id="adventure-video" 
             width="800" 
@@ -24,12 +32,12 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
         </iframe>
-        <div class="choice-buttons">
+        <div class="choice-buttons" style="display: none;"> <!-- Hidden until video ends -->
             <button id="btn-story-1">Story 1</button>
             <button id="btn-story-2">Story 2</button>
             <button id="btn-story-3">Story 3</button>
         </div>
-        <button id="final-button">Watch Final Story</button>
+        <button id="final-button" style="display: none;">Watch Final Story</button>
         <!-- Replay Button (Initially Hidden) -->
         <img id="replay-button" src="images/REPLAY.png" alt="Replay" style="display: none; cursor: pointer;">
     </div>
