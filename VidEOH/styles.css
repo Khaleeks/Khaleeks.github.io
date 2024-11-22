@@ -148,7 +148,7 @@ body {
     width: 150px; /* Adjust based on your image size */
     height: auto;
     position: fixed;
-    bottom: 5px; /* Distance from the bottom */
+    bottom: 3px; /* Distance from the bottom */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
     cursor: pointer; /* Make it look clickable */
