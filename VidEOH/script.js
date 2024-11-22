@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Show choices after intro video duration
         setTimeout(() => {
             choiceButtons.style.display = "block";
-        }, 1000); // Adjust based on intro video duration
+        }, 5000); // Adjust based on intro video duration
     });
 
     // Step 2: Story Buttons Logic
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     choiceButtons.style.display = "block"; // Show choices again
                 }
-            }, 1000); // Adjust based on story video duration
+            }, 5000); // Adjust based on story video duration
         });
     });
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Show replay button after final video
         setTimeout(() => {
             replayButton.style.display = "block";
-        }, 1000); // Adjust based on finale video duration
+        }, 5000); // Adjust based on finale video duration
     });
 
     // Step 4: Replay the story from the beginning
