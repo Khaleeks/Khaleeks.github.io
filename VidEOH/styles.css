@@ -129,29 +129,26 @@ body {
 }
 
 #final-button {
-    background-color: #ffc107;
-    color: #333;
-    display: none; /* Initially hidden */
-    margin: 20px auto; /* Center the button horizontally */
-    padding: 10px 20px;
-    font-size: 16px;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 150px; /* Same width as the replay button, you can adjust if needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Makes it a block element for better control */
+    margin: 20px auto; /* Centers the image horizontally */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
 }
 
 #final-button:hover {
-    background-color: #e0a800;
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+    filter: brightness(1.2); /* Increases the brightness on hover */
 }
+
 
 /* Replay Button Image */
 #replay-button {
     width: 150px; /* Adjust based on your image size */
     height: auto;
     position: fixed;
-    bottom: 150px; /* Distance from the bottom */
+    bottom: 5px; /* Distance from the bottom */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
     cursor: pointer; /* Make it look clickable */
