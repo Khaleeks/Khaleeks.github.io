@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const consoleTextElement = document.getElementById("console-text");
     const consoleUnderscore = document.getElementById("console-underscore");
 
+    // Create the audio element for the sound to play on typing animation
+    const typingSound = new Audio("sounds/typing-sound.wav");  
+
     // YouTube Video URLs
     const videos = {
         intro: "https://www.youtube.com/embed/OHMDIj9AL8Y?autoplay=1",
@@ -25,10 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let watchedStories = new Set();
 
-    // Add consoleText function here
     function consoleText(words, id, colors) {
         if (colors === undefined) colors = ['#fff']; // Default color if none is provided
-
+        
         let visible = true;
         let con = document.getElementById('console'); // Console container for the underscore
         let letterCount = 1;
@@ -36,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let waiting = false;
         let target = document.getElementById(id); // Target where the text will be typed
         target.setAttribute('style', 'color:' + colors[0]); // Set initial color of text
-
+    
         window.setInterval(function() {
             if (letterCount === 0 && !waiting) {
                 waiting = true;
@@ -47,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     colors.push(usedColor); // Recycle color to the back of the array
                     let usedWord = words.shift();
                     words.push(usedWord); // Recycle word to the back of the array
-
+    
                     x = 1; // Reset the letter count direction (to typing)
                     target.setAttribute('style', 'color:' + colors[0]); // Change text color
                     letterCount += x; // Start typing the next word
@@ -63,9 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (!waiting) {
                 target.innerHTML = words[0].substring(0, letterCount);
                 letterCount += x; // Increment or decrement letterCount based on direction
+    
+                // Only play the typing sound if it is not disabled
+                if (!typingSound.disabled) {
+                    typingSound.play();
+                }
             }
         }, 120); // Speed of typing (120ms per letter)
-
+    
         // Blinking underscore effect
         window.setInterval(function() {
             if (visible) {
@@ -77,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, 400); // Blink every 400ms
     }
+    
 
     // Usage example: Start typing animation with three strings and color cycling
     consoleText(['The Principals Secret.', 'Choose Your Own Adventure', 'Khaleeqa, Yerk, Ghaya, Tosshi.'], 'text', ['tomato', 'rebeccapurple', 'lightblue']);
@@ -88,10 +96,15 @@ document.addEventListener("DOMContentLoaded", () => {
         videoContainer.style.display = "block";
         iframeElement.src = videos.intro;
 
+        // Stop the typing sound when the play button is clicked
+        typingSound.pause(); // Pause the sound
+        typingSound.currentTime = 0; // Reset to the start
+        typingSound.disabled = true;
+
         // Show choices after intro video duration
         setTimeout(() => {
             choiceButtons.style.display = "block";
-        }, 10000); // Adjust based on intro video duration
+        }, 1000); // Adjust based on intro video duration
     });
 
     // Step 2: Story Buttons Logic
@@ -108,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     choiceButtons.style.display = "block"; // Show choices again
                 }
-            }, 10000); // Adjust based on story video duration
+            }, 1000); // Adjust based on story video duration
         });
     });
 
@@ -120,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Show replay button after final video
         setTimeout(() => {
             replayButton.style.display = "block";
-        }, 10000); // Adjust based on finale video duration
+        }, 1000); // Adjust based on finale video duration
     });
 
     // Step 4: Replay the story from the beginning
