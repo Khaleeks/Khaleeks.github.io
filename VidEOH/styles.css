@@ -116,6 +116,17 @@ body {
     transform: scale(1.1); /* Enlarge slightly on hover */
     filter: brightness(1.3); /* Lighten on hover */
 }
+/* Separate styles for the third button */
+.story-three {
+    position: relative;
+    top: -5px; /* Moves the third button higher */
+    z-index: 2; /* Optional: Brings the third button to the front if overlapping */
+}
+
+.story-three:hover {
+    transform: scale(1.1); /* Enlarge slightly on hover */
+    filter: brightness(1.3); /* Lighten on hover */
+}
 
 #final-button {
     background-color: #ffc107;
