@@ -2,9 +2,49 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #FCEDDA;
     margin: 0;
     padding: 0;
+}
+.leaf-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.leaf {
+    position: absolute;
+    display: block;
+    animation: fall 15s linear infinite;
+}
+
+/* Individual Item Styling with Evenly Spread and Centered Positioning */
+.leaf:nth-child(1) { left: 8%; animation-delay: -2s; }
+.leaf:nth-child(2) { left: 20%; animation-delay: -5s; }
+.leaf:nth-child(3) { left: 32%; animation-delay: -1s; }
+.leaf:nth-child(4) { left: 44%; animation-delay: -1s; }
+.leaf:nth-child(5) { left: 56%; animation-delay: -7s; }
+.leaf:nth-child(6) { left: 68%; animation-delay: -1s; }
+.leaf:nth-child(7) { left: 80%; animation-delay: -4s; }
+.leaf:nth-child(8) { left: 92%; animation-delay: -3s; }
+
+/* Falling Animation */
+@keyframes fall {
+    0% {
+        top: -10%;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+        transform: rotate(360deg);
+    }
 }
 
 /* Start Screen */
