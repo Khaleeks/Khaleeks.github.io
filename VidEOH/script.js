@@ -13,8 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const replayButton = document.getElementById("replay-button");
     const consoleTextElement = document.getElementById("console-text");
     const consoleUnderscore = document.getElementById("console-underscore");
-
-    // Create the audio element for the sound to play on typing animation
+    const canvas = document.getElementById("spray-canvas");
+    const ctx = canvas.getContext("2d");
+    const sprayCan = document.getElementById("spray-can");
     const typingSound = new Audio("sounds/typing-sound.wav");  
 
     // YouTube Video URLs
@@ -26,7 +27,93 @@ document.addEventListener("DOMContentLoaded", () => {
         finale: "https://www.youtube.com/embed/d_kx_VJjEUw?autoplay=1",
     };
 
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;  
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let particles = [];
+    let sprayCanVisible = false;
+    let sprayCanShown = false;
+
     let watchedStories = new Set();
+     // Function to update spray can position based on mouse position
+    function updateSprayCanPosition(event) {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+    sprayCan.style.left = `${mouseX - sprayCan.width / 2}px`;
+    sprayCan.style.top = `${mouseY - sprayCan.height / 2}px`;
+    }
+
+
+    // Function to show the spray can after a delay
+    function showSprayCan() {
+        if (sprayCanShown) return; // Prevent showing it again if it has already been shown
+
+        sprayCan.style.display = 'block';
+        sprayCanVisible = true;
+        sprayCanShown = true; // Mark the spray can as shown
+
+        // Hide the spray can after 5 seconds
+        setTimeout(() => {
+            sprayCan.style.display = 'none';
+            sprayCanVisible = false;
+        }, 9000); // Spray can disappears after 5 seconds
+    }
+
+    function drawSpray(event) {
+        if (event.buttons !== 1) return; // Ensure the left mouse button is held down
+        
+        // Create a new spray particle with a timestamp
+        const particle = {
+            x: mouseX,
+            y: mouseY,
+            color: 'rgba(255, 0, 0, 0.5)',
+            timestamp: Date.now(), // Store the creation time of the particle
+        };
+        
+        // Add the particle to the particles array
+        particles.push(particle);
+    }
+
+    function updateParticles() {
+        const currentTime = Date.now();
+        
+        // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Loop through particles and draw them
+        particles.forEach((particle, index) => {
+            // If the particle is older than 2 seconds, remove it
+            if (currentTime - particle.timestamp > 2000) {
+                particles.splice(index, 1); // Remove the particle from the array
+            } else {
+                // Draw the particle
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, 10, 0, Math.PI * 2);
+                ctx.fillStyle = particle.color;
+                ctx.fill();
+            }
+        });
+    }
+    
+ // Add event listener for mouse movement
+document.addEventListener('mousemove', (event) => {
+    updateSprayCanPosition(event); // Update spray can position
+    if (!sprayCanVisible) {
+        setTimeout(showSprayCan, 10000); // Show the spray can after 3 seconds
+    }
+    drawSpray(event); // Draw spray effect
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') { // Check if space bar is pressed
+        drawSpray(); // Draw spray effect when space bar is pressed
+    }
+});
+
+// Set an interval to update the particles every 50 milliseconds
+setInterval(updateParticles, 10);
 
     function consoleText(words, id, colors) {
         if (colors === undefined) colors = ['#fff']; // Default color if none is provided
@@ -92,6 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Step 1: Play the intro video
     playButton.addEventListener("click", () => {
+         fancyTransition(startScreen, videoContainer);
+         videoContainer.classList.add("active");
         startScreen.style.display = "none";
         videoContainer.style.display = "block";
         iframeElement.src = videos.intro;
@@ -107,24 +196,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 5000); // Adjust based on intro video duration
     });
 
-    // Step 2: Story Buttons Logic
-    Object.keys(storyButtons).forEach((key) => {
-        storyButtons[key].addEventListener("click", () => {
-            choiceButtons.style.display = "none"; // Hide choices while watching
-            iframeElement.src = videos[`story${key}`];
-            watchedStories.add(key);
+    // Step 2: Story Buttons Logic (Grouped)
+Object.keys(storyButtons).forEach((key) => {
+    storyButtons[key].addEventListener("click", () => {
+        choiceButtons.style.display = "none"; // Hide choices while watching
+        iframeElement.src = videos[`story${key}`]; // Dynamic video selection based on button key
+        watchedStories.add(Number(key)); // Add the story to the watched set (convert key to number)
 
-            // Check if all stories are watched
-            setTimeout(() => {
-                if (watchedStories.size === 3) {
-                    finalButton.style.display = "block"; // Show finale button
-                } else {
-                    choiceButtons.style.display = "block"; // Show choices again
-                }
-            }, 5000); // Adjust based on story video duration
-        });
+        // Check if all stories are watched
+        setTimeout(() => {
+            if (watchedStories.size === 3) {
+                finalButton.style.display = "block"; // Show finale button
+            } else {
+                choiceButtons.style.display = "block"; // Show choices again
+            }
+        }, 5000); // Adjust based on story video duration
     });
-
+});
     // Step 3: Play the final video
     finalButton.addEventListener("click", () => {
         finalButton.style.display = "none";
@@ -156,4 +244,25 @@ document.addEventListener("DOMContentLoaded", () => {
             typeText("Choose Your Own Adventure", consoleTextElement);
         }, 500); // Restart animation
     });
-});
+
+    function fancyTransition(fromScreen, toScreen) {
+        // Add twisting animation to the current screen
+        fromScreen.classList.add('twist-out');
+    
+        // Wait for the twist-out animation to complete
+        setTimeout(() => {
+            // Hide the current screen
+            fromScreen.style.display = 'none';
+            fromScreen.classList.remove('twist-out');
+    
+            // Show the next screen with a swirl-in animation
+            toScreen.style.display = 'block';
+            toScreen.classList.add('swirl-in');
+    
+            // Remove the swirl-in class after animation completes
+            setTimeout(() => {
+                toScreen.classList.remove('swirl-in');
+            }, 1500); // Match the duration of the swirl-in animation
+        }, 1500); // Match the duration of the twist-out animation
+    }
+}); 

@@ -7,23 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Reenie+Beanie&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose Your Adventure</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Start Screen -->
     <div id="start-screen">
-        <!-- Console Text Animation -->
         <div class="console-container">
-            <span id="text"></span> <!-- This is where the text will appear -->
-            <div class="console-underscore" id="console">&#95;</div> <!-- Blinking underscore -->
+            <span id="text"></span>
+            <div class="console-underscore" id="console">&#95;</div>
         </div>
-        <!-- Play Button as Image -->
         <img id="play-button" src="images/PLAY.png" alt="Play Button">
-
-        <!-- Falling Leaves -->
         <div class="leaf-container">
             <img class="leaf" src="images/1.png" width="75" height="75">
             <img class="leaf" src="images/2.png" width="75" height="75">
@@ -37,7 +31,7 @@
     </div>
 
     <!-- Video Player -->
-    <div id="video-container" style="display: none;"> <!-- Initially hidden -->
+    <div id="video-container" style="display: none;">
         <iframe 
             id="adventure-video" 
             width="800" 
@@ -46,14 +40,17 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
         </iframe>
-        <div class="choice-buttons" style="display: none;"> <!-- Hidden until video ends -->
-            <img id="btn-story-1" src="images/ghaya.png" alt="Story 1" class="choice-image" />
-            <img id="btn-story-2" src="images/khaleeqa.png" alt="Story 2" class="choice-image" />
-            <img id="btn-story-3" src="images/tosshi.png" alt="Story 3" class="choice-image story-three" />
-        </div>
+
+            <img id="spray-can" src="images/5.png" alt="Spray Can" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 100px; display: none;">
+            <div class="choice-buttons">
+                <img id="btn-story-1" src="images/ghaya.png" alt="Story 1" class="choice-image" />
+                <img id="btn-story-2" src="images/khaleeqa.png" alt="Story 2" class="choice-image" />
+                <img id="btn-story-3" src="images/tosshi.png" alt="Story 3" class="choice-image story-three" />
+            </div>
         <img id="final-button" src="images/who.png" style="display: none; cursor: pointer;" alt="Watch Final Story">
-        <!-- Replay Button (Initially Hidden) -->
         <img id="replay-button" src="images/REPLAY.png" alt="Replay" style="display: none; cursor: pointer;">
+        <!-- Canvas for Spray Effect -->
+        <canvas id="spray-canvas" style="position: absolute; top: 0; left: 0;"></canvas>
     </div>
 
     <script src="script.js"></script>
