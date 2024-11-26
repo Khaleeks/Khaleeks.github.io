@@ -47,39 +47,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Function to show the spray can after a delay
-function showSprayCan() {
-    if (sprayCanShown) return; // Prevent showing it again if it has already been shown
+// function showSprayCan() {
+//     if (sprayCanShown) return; // Prevent showing it again if it has already been shown
 
-    // Show the spray can
-    sprayCan.style.display = 'block';
-    sprayCanVisible = true;
-    sprayCanShown = true; // Mark the spray can as shown
+//     // Show the spray can
+//     sprayCan.style.display = 'block';
+//     sprayCanVisible = true;
+//     sprayCanShown = true; // Mark the spray can as shown
 
-    // Display the instruction message
-    const message = document.createElement('div');
-    message.id = 'sprayMessage';
-    message.textContent = 'Press mouse to spray paint';
-    message.style.position = 'fixed';
-    message.style.top = '10%';
-    message.style.left = '50%';
-    message.style.transform = 'translateX(-50%)';
-    message.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-    message.style.color = 'white';
-    message.style.padding = '10px 20px';
-    message.style.borderRadius = '5px';
-    message.style.fontSize = '18px';
-    message.style.zIndex = '1000';
-    document.body.appendChild(message);
+//     // Display the instruction message
+//     const message = document.createElement('div');
+//     message.id = 'sprayMessage';
+//     message.textContent = 'Press mouse to spray paint';
+//     message.style.position = 'fixed';
+//     message.style.top = '10%';
+//     message.style.left = '50%';
+//     message.style.transform = 'translateX(-50%)';
+//     message.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+//     message.style.color = 'white';
+//     message.style.padding = '10px 20px';
+//     message.style.borderRadius = '5px';
+//     message.style.fontSize = '18px';
+//     message.style.zIndex = '1000';
+//     document.body.appendChild(message);
 
-    // Remove the spray can and the message after 15 seconds
-    setTimeout(() => {
-        sprayCan.style.display = 'none';
-        sprayCanVisible = false;
+//     // Remove the spray can and the message after 15 seconds
+//     setTimeout(() => {
+//         sprayCan.style.display = 'none';
+//         sprayCanVisible = false;
 
-        // Remove the message from the screen
-        document.body.removeChild(message);
-    }, 15000); // Spray can and message disappear after 15 seconds
-}
+//         // Remove the message from the screen
+//         document.body.removeChild(message);
+//     }, 15000); // Spray can and message disappear after 15 seconds
+// }
 
 
     function drawSpray(event) {
