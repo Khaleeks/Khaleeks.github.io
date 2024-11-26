@@ -214,7 +214,7 @@ setInterval(updateParticles, 10);
         // Show choices after intro video duration
         setTimeout(() => {
             choiceButtons.style.display = "block";
-        }, 5000); // Adjust based on intro video duration
+        }, 35000); // Adjust based on intro video duration
     });
 
     // Step 2: Story Buttons Logic (Grouped)
@@ -229,7 +229,7 @@ Object.keys(storyButtons).forEach((key) => {
             if (watchedStories.size === 3) {
                 setTimeout(() => {
                     finalButton.style.display = "block"; // Show the finale button after 45 seconds
-                }, 45000); // 45 seconds delay
+                }, 5000); // 45 seconds delay
             } else {
                 choiceButtons.style.display = "block"; // Show choices again
             }
