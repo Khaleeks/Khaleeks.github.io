@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // YouTube Video URLs
     const videos = {
-        intro: "https://www.youtube.com/embed/OHMDIj9AL8Y?autoplay=1",
+        intro: "https://www.youtube.com/embed/DDfwtLbAIWI?si=pti6qfMJZ10psOIE",
         story1: "https://www.youtube.com/embed/2yZQdGJVUu8?si=atOHbs5xlvtgl4Mh" ,
         story2: "https://www.youtube.com/embed/wRv8tYrBMUo?si=UwC4TDsQxdmqkYcE" ,
         story3: "https://www.youtube.com/embed/gbo39u9V29A?si=mTpED2f0zhISfy1Z",
