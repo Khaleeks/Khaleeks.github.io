@@ -47,19 +47,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Function to show the spray can after a delay
-    function showSprayCan() {
-        if (sprayCanShown) return; // Prevent showing it again if it has already been shown
+function showSprayCan() {
+    if (sprayCanShown) return; // Prevent showing it again if it has already been shown
 
-        sprayCan.style.display = 'block';
-        sprayCanVisible = true;
-        sprayCanShown = true; // Mark the spray can as shown
+    // Show the spray can
+    sprayCan.style.display = 'block';
+    sprayCanVisible = true;
+    sprayCanShown = true; // Mark the spray can as shown
 
-        // Hide the spray can after 5 seconds
-        setTimeout(() => {
-            sprayCan.style.display = 'none';
-            sprayCanVisible = false;
-        }, 9000); // Spray can disappears after 5 seconds
-    }
+    // Display the instruction message
+    const message = document.createElement('div');
+    message.id = 'sprayMessage';
+    message.textContent = 'Press mouse to spray paint';
+    message.style.position = 'fixed';
+    message.style.top = '10%';
+    message.style.left = '50%';
+    message.style.transform = 'translateX(-50%)';
+    message.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    message.style.color = 'white';
+    message.style.padding = '10px 20px';
+    message.style.borderRadius = '5px';
+    message.style.fontSize = '18px';
+    message.style.zIndex = '1000';
+    document.body.appendChild(message);
+
+    // Remove the spray can and the message after 15 seconds
+    setTimeout(() => {
+        sprayCan.style.display = 'none';
+        sprayCanVisible = false;
+
+        // Remove the message from the screen
+        document.body.removeChild(message);
+    }, 15000); // Spray can and message disappear after 15 seconds
+}
+
 
     function drawSpray(event) {
         if (event.buttons !== 1) return; // Ensure the left mouse button is held down
@@ -101,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('mousemove', (event) => {
     updateSprayCanPosition(event); // Update spray can position
     if (!sprayCanVisible) {
-        setTimeout(showSprayCan, 10000); // Show the spray can after 3 seconds
+        setTimeout(showSprayCan, 36000); // Show the spray can after 3 seconds
     }
     drawSpray(event); // Draw spray effect
 });
@@ -174,7 +195,7 @@ setInterval(updateParticles, 10);
     
 
     // Usage example: Start typing animation with three strings and color cycling
-    consoleText(['The Principals Secret.', 'Choose Your Own Adventure', 'Khaleeqa, Yerk, Ghaya, Tosshi.'], 'text', ['tomato', 'rebeccapurple', 'lightblue']);
+    consoleText(['The Desperate Students of Saadiyat Island', 'An Interactive Film', 'Khaleeqa, Yerk, Ghaya, Tosshi.'], 'text', ['tomato', 'rebeccapurple', 'lightblue']);
     // You can call this function as needed elsewhere in the script
 
     // Step 1: Play the intro video
@@ -206,11 +227,13 @@ Object.keys(storyButtons).forEach((key) => {
         // Check if all stories are watched
         setTimeout(() => {
             if (watchedStories.size === 3) {
-                finalButton.style.display = "block"; // Show finale button
+                setTimeout(() => {
+                    finalButton.style.display = "block"; // Show the finale button after 45 seconds
+                }, 45000); // 45 seconds delay
             } else {
                 choiceButtons.style.display = "block"; // Show choices again
             }
-        }, 5000); // Adjust based on story video duration
+        }, 45000); // Adjust based on story video duration
     });
 });
     // Step 3: Play the final video
@@ -221,7 +244,7 @@ Object.keys(storyButtons).forEach((key) => {
         // Show replay button after final video
         setTimeout(() => {
             replayButton.style.display = "block";
-        }, 5000); // Adjust based on finale video duration
+        }, 21000); // Adjust based on finale video duration
     });
 
     // Step 4: Replay the story from the beginning
