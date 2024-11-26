@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // YouTube Video URLs
     const videos = {
         intro: "https://www.youtube.com/embed/OHMDIj9AL8Y?autoplay=1",
-        story1: "https://www.youtube.com/embed/d_kx_VJjEUw?autoplay=1",
-        story2: "https://www.youtube.com/embed/js1Wmds7br4?autoplay=1",
-        story3: "https://www.youtube.com/embed/OHMDIj9AL8Y?autoplay=1",
-        finale: "https://www.youtube.com/embed/d_kx_VJjEUw?autoplay=1",
+        story1: "https://www.youtube.com/embed/2yZQdGJVUu8?si=atOHbs5xlvtgl4Mh" ,
+        story2: "https://www.youtube.com/embed/wRv8tYrBMUo?si=UwC4TDsQxdmqkYcE" ,
+        story3: "https://www.youtube.com/embed/gbo39u9V29A?si=mTpED2f0zhISfy1Z",
+        finale: "https://www.youtube.com/embed/Wt7SdwxHNg0?si=Y5hVbgbNNpH6WqRC" ,
     };
 
     canvas.width = window.innerWidth;
